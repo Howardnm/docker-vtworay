@@ -12,12 +12,9 @@ mkdir /etc/v2ray
         curl -sSL https://get.daocloud.io/docker | sh
         systemctl start docker
         systemctl enable docker
-        echo "-----------------------------------------"
-	    echo "-----------------------------------------"
         echo -e "安装docker环境...安装完成!"
-	    echo "-----------------------------------------"
-	    echo "-----------------------------------------"
     fi
+    clear
     echo -e "一键安装v2ray脚本howard
 ————————————————————————————————
  ${Green_font_prefix}1.${Font_color_suffix} 安装 v2ray ssr ss
@@ -83,7 +80,12 @@ elif [ "${howard}" = "2" ]; then
 elif [ "${howard}" = "3" ]; then
 	echo -e "goodbye！！！"
 fi
-	    echo -e "docker正在运行的容器：
+clear
+	    echo -e "
+————————————————————————————————
+goodbye friends！！！
+————————————————————————————————
+docker正在运行的容器：
 ————————————————————————————————"
 docker ps
 rm -- "$0"
