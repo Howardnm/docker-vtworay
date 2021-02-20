@@ -12,13 +12,20 @@ mkdir /etc/v2ray
         curl -sSL https://get.daocloud.io/docker | sh
         systemctl start docker
         systemctl enable docker
-        echo "${Red_font_prefix}安装docker环境...安装完成!${Font_color_suffix}"
+        echo -e "${Red_font_prefix}安装docker环境...安装完成!${Font_color_suffix}"
 	echo "-----------------------------------------"
 	echo "-----------------------------------------"
     fi
-read -t 30 -p "${Red_font_prefix}输入：（1）安装v2ray ssr ss （2）卸载v2ray ssr ss （3）退出${Font_color_suffix} :" howard
+    clear
+    echo -e "${Red_font_prefix}一键安装v2ray脚本howard${Font_color_suffix}
+————————————————————————————————
+ ${Green_font_prefix}1.${Font_color_suffix} 安装 v2ray ssr ss
+ ${Green_font_prefix}2.${Font_color_suffix} 卸载 v2ray ssr ss
+ ${Green_font_prefix}3.${Font_color_suffix} 退出
+————————————————————————————————"
+read -t 30 -p "输入对应数字【1-3】 :" howard
 if [ "${howard}" = "1" ]; then
-	read -t 30 -p "是否安装v2ray${Font_color_suffix}? y or n :" vtworay
+	read -t 30 -p "是否安装v2ray$? y or n :" vtworay
 	if [ "${vtworay}" = "y" ]; then
 		rm -f /etc/v2ray/*
 		wget -P /etc/v2ray/ https://raw.githubusercontent.com/Howardnm/vtworay/main/config_mkcp_detour.json 
@@ -68,6 +75,6 @@ elif [ "${howard}" = "2" ]; then
 		echo "---"
 	fi
 elif [ "${howard}" = "3" ]; then
-	echo "${Red_font_prefix}goodbye${Font_color_suffix}"
+	echo -e "${Red_font_prefix}goodbye${Font_color_suffix}"
 fi
 rm -- "$0"
