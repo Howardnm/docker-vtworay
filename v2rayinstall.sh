@@ -1,5 +1,7 @@
 #!/bin/bash
 basepath=$(cd `dirname $0`; pwd)
+yum -y install wget
+yum -y install curl
 mkdir /etc/v2ray
 	echo "检查Docker......"
 	docker -v
