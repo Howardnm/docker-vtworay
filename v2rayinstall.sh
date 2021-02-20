@@ -61,6 +61,7 @@ goodbye friends！！！
 docker正在运行的容器：
 ————————————————————————————————"
 docker ps
+echo -e "————————————————————————————————"
 elif [ "${howard}" = "2" ]; then
 	read -t 30 -p "要卸载v2ray？ y/n :" vtworaydel
 	if [ "${vtworaydel}" = "y" ]; then
@@ -87,6 +88,7 @@ goodbye friends！！！
 docker正在运行的容器：
 ————————————————————————————————"
 docker ps
+echo -e "————————————————————————————————"
 elif [ "${howard}" = "3" ]; then
 clear
 	    echo -e "
