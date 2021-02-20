@@ -22,7 +22,7 @@ clear
 ————————————————————————————————"
 read -t 30 -p "输入对应数字【1-4】 :" howard
 if [ "${howard}" = "1" ]; then
-	read -t 30 -p "是否安装v2ray? y or n :" vtworay
+	read -t 30 -p "要安装v2ray ？ y/n :" vtworay
 	if [ "${vtworay}" = "y" ]; then
 		rm -f /etc/v2ray/*
 		wget -P /etc/v2ray/ https://raw.githubusercontent.com/Howardnm/vtworay/main/config_mkcp_detour.json 
@@ -34,7 +34,7 @@ if [ "${howard}" = "1" ]; then
 		echo "---"
 	fi
 elif [ "${howard}" = "2" ]; then
-	read -t 30 -p "是否安装ss和ssr? y or n :" ssrss
+	read -t 30 -p "要安装ss和ssr ？ y/n :" ssrss
 	if [ "${ssrss}" = "y" ]; then
 		docker run -d -p 54019:8388 -p 54019:8388/udp --name shadowsocks-libev --restart=always -e SERVER_PORT="8388" -e PASSWORD="hxc123" -e METHOD="aes-128-gcm" -e DNS_ADDRS="8.8.8.8,223.5.5.5,8.8.4.4,114.114.114.114" -e TIMEOUT="3000" shadowsocks/shadowsocks-libev
 		docker run -d -p 54009:8388 -p 54009:8388/udp --name shadowsocksR-libev --restart=always -e SERVER_PORT="8388" -e PASSWORD="hxc123" -e METHOD="aes-128-cfb" -e DNS_ADDRS="8.8.8.8,223.5.5.5,8.8.4.4,114.114.114.114" -e TIMEOUT="3000" shadowsocks/shadowsocks-libev
@@ -49,7 +49,7 @@ docker正在运行的容器：
 ————————————————————————————————"
 docker ps
 elif [ "${howard}" = "3" ]; then
-	read -t 30 -p "是否卸载v2ray? y or n :" vtworaydel
+	read -t 30 -p "要卸载v2ray？ y/n :" vtworaydel
 	if [ "${vtworaydel}" = "y" ]; then
 		docker stop v2ray_mkcp v2ray_tcp 
 		docker rm v2ray_mkcp v2ray_tcp 
@@ -58,7 +58,7 @@ elif [ "${howard}" = "3" ]; then
 	elif [ "${vtworaydel}" = "n" ]; then
 		echo "---"
 	fi
-	read -t 30 -p "是否卸载ssr和ss? y or n :" ssrssdel
+	read -t 30 -p "要卸载ssr和ss？ y/n :" ssrssdel
 		if [ "${ssrssdel}" = "y" ]; then
 		docker stop shadowsocks-libev shadowsocksR-libev
 		docker rm shadowsocks-libev shadowsocksR-libev
