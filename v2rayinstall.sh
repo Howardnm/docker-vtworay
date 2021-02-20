@@ -33,6 +33,13 @@ if [ "${howard}" = "1" ]; then
 	elif [ "${vtworay}" = "n" ]; then
 		echo "---"
 	fi
+echo -e "
+————————————————————————————————
+goodbye friends！！！
+————————————————————————————————
+docker正在运行的容器：
+————————————————————————————————"
+docker ps
 elif [ "${howard}" = "2" ]; then
 	read -t 30 -p "要安装ss和ssr ？ y/n :" ssrss
 	if [ "${ssrss}" = "y" ]; then
