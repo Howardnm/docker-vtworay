@@ -15,12 +15,11 @@ mkdir /etc/v2ray
 clear
     echo -e "一键安装v2ray脚本howard 2021-2-21
 ————————————————————————————————
- ${Green_font_prefix}1.${Font_color_suffix} 安装 v2ray 
- ${Green_font_prefix}2.${Font_color_suffix} 安装 ssr ss
- ${Green_font_prefix}3.${Font_color_suffix} 卸载 v2ray ssr ss
- ${Green_font_prefix}4.${Font_color_suffix} 退出
+ ${Green_font_prefix}1.${Font_color_suffix} 安装 v2ray ssr ss
+ ${Green_font_prefix}2.${Font_color_suffix} 卸载 v2ray ssr ss
+ ${Green_font_prefix}3.${Font_color_suffix} 退出
 ————————————————————————————————"
-read -t 30 -p "输入对应数字【1-4】 :" howard
+read -t 30 -p "输入对应数字【1-3】 :" howard
 if [ "${howard}" = "1" ]; then
 	read -t 30 -p "要安装v2ray ？ y/n :" vtworay
 	if [ "${vtworay}" = "y" ]; then
@@ -33,20 +32,27 @@ if [ "${howard}" = "1" ]; then
 	elif [ "${vtworay}" = "n" ]; then
 		echo "---"
 	fi
-echo -e "
-————————————————————————————————
-goodbye friends！！！
-————————————————————————————————
-docker正在运行的容器：
-————————————————————————————————"
-docker ps
-elif [ "${howard}" = "2" ]; then
+	echo "————————————————————————————————"
 	read -t 30 -p "要安装ss和ssr ？ y/n :" ssrss
 	if [ "${ssrss}" = "y" ]; then
 		docker run -d -p 54019:8388 -p 54019:8388/udp --name shadowsocks-libev --restart=always -e SERVER_PORT="8388" -e PASSWORD="hxc123" -e METHOD="aes-128-gcm" -e DNS_ADDRS="8.8.8.8,223.5.5.5,8.8.4.4,114.114.114.114" -e TIMEOUT="3000" shadowsocks/shadowsocks-libev
 		docker run -d -p 54009:8388 -p 54009:8388/udp --name shadowsocksR-libev --restart=always -e SERVER_PORT="8388" -e PASSWORD="hxc123" -e METHOD="aes-128-cfb" -e DNS_ADDRS="8.8.8.8,223.5.5.5,8.8.4.4,114.114.114.114" -e TIMEOUT="3000" shadowsocks/shadowsocks-libev
 	elif [ "${ssrss}" = "n" ]; then
 		echo "---"
+	fi
+	if [ "${vtworay}" = "y" ]; then
+	echo -e "订阅后，修改ip即可使用
+	————————————————————————————————
+	vmess://ew0KICAidiI6ICIyIiwNCiAgInBzIjogInYycmF5IiwNCiAgImFkZCI6ICIwLjAuMC4wIiwNCiAgInBvcnQiOiAiNTIwMDEiLA0KICAiaWQiOiAiOWFjOWEwYjMtZTgwYi00NjZiLTgxM2EtNzM4YzZjZmQ0NmNkIiwNCiAgImFpZCI6ICIyMCIsDQogICJuZXQiOiAia2NwIiwNCiAgInR5cGUiOiAibm9uZSIsDQogICJob3N0IjogIiIsDQogICJwYXRoIjogIiIsDQogICJ0bHMiOiAiIg0KfQ==
+	————————————————————————————————"
+	fi
+	if [ "${ssrss}" = "y" ]; then
+	echo -e "订阅后，修改ip即可使用
+	————————————————————————————————
+	ss://YWVzLTEyOC1nY206aHhjMTIzQDAuMC4wLjA6NTQwMTk#ss
+
+	ssr://MC4wLjAuMDo1NDAwOTpvcmlnaW46YWVzLTEyOC1jZmI6cGxhaW46YUhoak1USXovP3JlbWFya3M9YzNOeSZwcm90b3BhcmFtPSZvYmZzcGFyYW09
+	————————————————————————————————"
 	fi
 echo -e "
 ————————————————————————————————
@@ -65,6 +71,7 @@ elif [ "${howard}" = "3" ]; then
 	elif [ "${vtworaydel}" = "n" ]; then
 		echo "---"
 	fi
+	echo "————————————————————————————————"
 	read -t 30 -p "要卸载ssr和ss？ y/n :" ssrssdel
 		if [ "${ssrssdel}" = "y" ]; then
 		docker stop shadowsocks-libev shadowsocksR-libev
@@ -91,22 +98,5 @@ docker正在运行的容器：
 docker ps
 echo -e "————————————————————————————————"
 fi
-if [ "${vtworay}" = "y" ]; then
-	echo -e "订阅后，修改ip即可使用
-	————————————————————————————————
-	vmess://ew0KICAidiI6ICIyIiwNCiAgInBzIjogInYycmF5IiwNCiAgImFkZCI6ICIwLjAuMC4wIiwNCiAgInBvcnQiOiAiNTIwMDEiLA0KICAiaWQiOiAiOWFjOWEwYjMtZTgwYi00NjZiLTgxM2EtNzM4YzZjZmQ0NmNkIiwNCiAgImFpZCI6ICIyMCIsDQogICJuZXQiOiAia2NwIiwNCiAgInR5cGUiOiAibm9uZSIsDQogICJob3N0IjogIiIsDQogICJwYXRoIjogIiIsDQogICJ0bHMiOiAiIg0KfQ==
-	————————————————————————————————"
-elif [ "${vtworay}" = "n" ]; then
-	echo "---"
-fi
-if [ "${ssrss}" = "y" ]; then
-	echo -e "订阅后，修改ip即可使用
-	————————————————————————————————
-	ss://YWVzLTEyOC1nY206aHhjMTIzQDAuMC4wLjA6NTQwMTk#ss
 
-	ssr://MC4wLjAuMDo1NDAwOTpvcmlnaW46YWVzLTEyOC1jZmI6cGxhaW46YUhoak1USXovP3JlbWFya3M9YzNOeSZwcm90b3BhcmFtPSZvYmZzcGFyYW09
-	————————————————————————————————"
-elif [ "${ssrss}" = "n" ]; then
-	echo "---"
-fi
 rm -- "$0"
