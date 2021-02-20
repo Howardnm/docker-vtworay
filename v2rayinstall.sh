@@ -1,7 +1,5 @@
 #!/bin/bash
 basepath=$(cd `dirname $0`; pwd)
-yum -y install wget
-yum -y install curl
 mkdir /etc/v2ray
 	echo "检查Docker......"
 	docker -v
@@ -14,7 +12,7 @@ mkdir /etc/v2ray
         systemctl enable docker
         echo -e "安装docker环境...安装完成!"
     fi
-    clear
+clear
     echo -e "一键安装v2ray脚本howard
 ————————————————————————————————
  ${Green_font_prefix}1.${Font_color_suffix} 安装 v2ray ssr ss
