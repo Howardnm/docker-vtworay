@@ -15,4 +15,4 @@ wget  https://raw.githubusercontent.com/Howardnm/vtworay/main/v2rayinstall.sh &&
 ```
 
 # 三、订阅后，修改ip即可使用
-ss<img src="https://img-blog.csdnimg.cn/20210218130201852.JPG" width="10%">ssr<img src="https://img-blog.csdnimg.cn/20210218130213142.JPG" width="15%">vmess<img src="https://img-blog.csdnimg.cn/20210219012831427.png" width="15%">
+$$<img src="https://img-blog.csdnimg.cn/20210218130201852.JPG" width="10%">$$r<img src="https://img-blog.csdnimg.cn/20210218130213142.JPG" width="15%">vmmess<img src="https://img-blog.csdnimg.cn/20210219012831427.png" width="15%">
