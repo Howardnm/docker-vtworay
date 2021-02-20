@@ -1,8 +1,6 @@
 #!/bin/bash
 basepath=$(cd `dirname $0`; pwd)
 mkdir /etc/v2ray
-cd /etc/v2ray
-rm -f *
 	echo "检查Docker......"
 	docker -v
     if [ $? -eq  0 ]; then
@@ -13,6 +11,8 @@ rm -f *
         systemctl start docker
         systemctl enable docker
         echo "安装docker环境...安装完成!"
+	echo "-----------------------------------------"
+	echo "-----------------------------------------"
     fi
 read -t 30 -p "输入：\
 1、安装v2ray ssr ss\
@@ -21,6 +21,7 @@ read -t 30 -p "输入：\
 if [ "${howard}" = "1" ]; then
 	read -t 30 -p "是否安装v2ray? y or n :" vtworay
 	if [ "${vtworay}" = "y" ]; then
+		rm -f /etc/v2ray/*
 		wget -P /etc/v2ray/ https://raw.githubusercontent.com/Howardnm/vtworay/main/config_mkcp_detour.json 
 		wget -P /etc/v2ray/ https://raw.githubusercontent.com/Howardnm/vtworay/main/config_tcp.json 
 		wget -P /etc/v2ray/ https://raw.githubusercontent.com/Howardnm/vtworay/main/config_mkcp.json
@@ -70,3 +71,4 @@ elif [ "${howard}" = "2" ]; then
 elif [ "${howard}" = "3" ]; then
 	echo "goodbye"
 fi
+rm -f /etc/v2rayinstall/*
