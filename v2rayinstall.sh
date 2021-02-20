@@ -40,23 +40,31 @@ if [ "${howard}" = "1" ]; then
 		echo "---"
 	fi
 	if [ "${vtworay}" = "y" ]; then
-		    echo -e "订阅后，修改ip即可使用
-————————————————————————————————
-vmess://ew0KICAidiI6ICIyIiwNCiAgInBzIjogInYycmF5IiwNCiAgImFkZCI6ICIwLjAuMC4wIiwNCiAgInBvcnQiOiAiNTIwMDEiLA0KICAiaWQiOiAiOWFjOWEwYjMtZTgwYi00NjZiLTgxM2EtNzM4YzZjZmQ0NmNkIiwNCiAgImFpZCI6ICIyMCIsDQogICJuZXQiOiAia2NwIiwNCiAgInR5cGUiOiAibm9uZSIsDQogICJob3N0IjogIiIsDQogICJwYXRoIjogIiIsDQogICJ0bHMiOiAiIg0KfQ==
-————————————————————————————————"
+clear
+		echo -e "订阅后，修改ip即可使用
+		————————————————————————————————
+		vmess://ew0KICAidiI6ICIyIiwNCiAgInBzIjogInYycmF5IiwNCiAgImFkZCI6ICIwLjAuMC4wIiwNCiAgInBvcnQiOiAiNTIwMDEiLA0KICAiaWQiOiAiOWFjOWEwYjMtZTgwYi00NjZiLTgxM2EtNzM4YzZjZmQ0NmNkIiwNCiAgImFpZCI6ICIyMCIsDQogICJuZXQiOiAia2NwIiwNCiAgInR5cGUiOiAibm9uZSIsDQogICJob3N0IjogIiIsDQogICJwYXRoIjogIiIsDQogICJ0bHMiOiAiIg0KfQ==
+		————————————————————————————————"
 	elif [ "${vtworay}" = "n" ]; then
 		echo "---"
 	fi
 	if [ "${ssrss}" = "y" ]; then
-	    echo -e "订阅后，修改ip即可使用
-————————————————————————————————
-ss://YWVzLTEyOC1nY206aHhjMTIzQDAuMC4wLjA6NTQwMTk#ss
+		echo -e "订阅后，修改ip即可使用
+		————————————————————————————————
+		ss://YWVzLTEyOC1nY206aHhjMTIzQDAuMC4wLjA6NTQwMTk#ss
 
-ssr://MC4wLjAuMDo1NDAwOTpvcmlnaW46YWVzLTEyOC1jZmI6cGxhaW46YUhoak1USXovP3JlbWFya3M9YzNOeSZwcm90b3BhcmFtPSZvYmZzcGFyYW09
-————————————————————————————————"
+		ssr://MC4wLjAuMDo1NDAwOTpvcmlnaW46YWVzLTEyOC1jZmI6cGxhaW46YUhoak1USXovP3JlbWFya3M9YzNOeSZwcm90b3BhcmFtPSZvYmZzcGFyYW09
+		————————————————————————————————"
 	elif [ "${ssrss}" = "n" ]; then
 		echo "---"
 	fi
+echo -e "
+————————————————————————————————
+goodbye friends！！！
+————————————————————————————————
+docker正在运行的容器：
+————————————————————————————————"
+docker ps
 elif [ "${howard}" = "2" ]; then
 	read -t 30 -p "是否卸载v2ray? y or n :" vtworaydel
 	if [ "${vtworaydel}" = "y" ]; then
@@ -75,9 +83,15 @@ elif [ "${howard}" = "2" ]; then
 	elif [ "${ssrssdel}" = "n" ]; then
 		echo "---"
 	fi
+echo -e "
+————————————————————————————————
+goodbye friends！！！
+————————————————————————————————
+docker正在运行的容器：
+————————————————————————————————"
+docker ps
 elif [ "${howard}" = "3" ]; then
 	echo -e "goodbye！！！"
-fi
 clear
 	    echo -e "
 ————————————————————————————————
@@ -86,4 +100,6 @@ goodbye friends！！！
 docker正在运行的容器：
 ————————————————————————————————"
 docker ps
+fi
+
 rm -- "$0"
