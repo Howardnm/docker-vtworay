@@ -29,16 +29,14 @@ if [ "${howard}" = "1" ]; then
 		wget -P /etc/v2ray/ https://raw.githubusercontent.com/Howardnm/vtworay/main/config_mkcp.json
 		docker run -d --name v2ray_mkcp --restart=always -v /etc/v2ray:/etc/v2ray -p 52001:52001 -p 52001:52001/udp v2fly/v2fly-core  v2ray -config=/etc/v2ray/config_mkcp.json
 		docker run -d --name v2ray_tcp --restart=always -v /etc/v2ray:/etc/v2ray -p 51001:51001 -p 51001:51001/udp v2fly/v2fly-core  v2ray -config=/etc/v2ray/config_tcp.json
-	elif [ "${vtworay}" = "n" ]; then
-		echo "---"
+clear
 	fi
 	echo "————————————————————————————————"
 	read -t 30 -p "要安装ss和ssr ？ y/n :" ssrss
 	if [ "${ssrss}" = "y" ]; then
 		docker run -d -p 54019:8388 -p 54019:8388/udp --name shadowsocks-libev --restart=always -e SERVER_PORT="8388" -e PASSWORD="hxc123" -e METHOD="aes-128-gcm" -e DNS_ADDRS="8.8.8.8,223.5.5.5,8.8.4.4,114.114.114.114" -e TIMEOUT="3000" shadowsocks/shadowsocks-libev
 		docker run -d -p 54009:8388 -p 54009:8388/udp --name shadowsocksR-libev --restart=always -e SERVER_PORT="8388" -e PASSWORD="hxc123" -e METHOD="aes-128-cfb" -e DNS_ADDRS="8.8.8.8,223.5.5.5,8.8.4.4,114.114.114.114" -e TIMEOUT="3000" shadowsocks/shadowsocks-libev
-	elif [ "${ssrss}" = "n" ]; then
-		echo "---"
+clear
 	fi
 	if [ "${vtworay}" = "y" ]; then
 	echo -e "订阅后，修改ip即可使用
@@ -55,7 +53,6 @@ if [ "${howard}" = "1" ]; then
 	————————————————————————————————"
 	fi
 echo -e "
-————————————————————————————————
 goodbye friends！！！
 ————————————————————————————————
 docker正在运行的容器：
