@@ -1,4 +1,7 @@
 #!/bin/bash
+
+basepath=$(cd `dirname $0`; pwd)
+
 read -t 30 -p "是否安装v2ray? y or n :" isMove
 if [ "${isMove}" = "y" ]; then
 wget -P /etc/v2ray/ https://raw.githubusercontent.com/Howardnm/vtworay/main/config_mkcp_detour.json https://raw.githubusercontent.com/Howardnm/vtworay/main/config_tcp.json https://raw.githubusercontent.com/Howardnm/vtworay/main/config_mkcp.json
