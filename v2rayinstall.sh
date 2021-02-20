@@ -14,7 +14,10 @@ rm -f *
         systemctl enable docker
         echo "安装docker环境...安装完成!"
     fi
-read -t 30 -p "输入：\n 1、安装 \n 2、卸载 \n 3、退出 :" howard
+read -t 30 -p "输入：\
+1、安装v2ray ssr ss\
+2、卸载v2ray ssr ss\
+3、退出 :" howard
 if [ "${howard}" = "1" ]; then
 	read -t 30 -p "是否安装v2ray? y or n :" vtworay
 	if [ "${vtworay}" = "y" ]; then
