@@ -14,6 +14,7 @@ mkdir /etc/v2ray
     fi
 clear
     echo -e "一键安装v2ray脚本howard
+【2021-2-20】
 ————————————————————————————————
  ${Green_font_prefix}1.${Font_color_suffix} 安装 v2ray ssr ss
  ${Green_font_prefix}2.${Font_color_suffix} 卸载 v2ray ssr ss
@@ -91,7 +92,6 @@ docker正在运行的容器：
 ————————————————————————————————"
 docker ps
 elif [ "${howard}" = "3" ]; then
-	echo -e "goodbye！！！"
 clear
 	    echo -e "
 ————————————————————————————————
