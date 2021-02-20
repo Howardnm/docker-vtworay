@@ -69,8 +69,8 @@ elif [ "${howard}" = "2" ]; then
 	fi
 	read -t 30 -p "是否卸载ssr和ss? y or n :" ssrssdel
 		if [ "${ssrssdel}" = "y" ]; then
-		docker stop shadowsocks-libev
-		docker rm shadowsocksR-libev
+		docker stop shadowsocks-libev shadowsocksR-libev
+		docker rm shadowsocks-libev shadowsocksR-libev
 		echo "已卸载ssr和ss"
 	elif [ "${ssrssdel}" = "n" ]; then
 		echo "---"
