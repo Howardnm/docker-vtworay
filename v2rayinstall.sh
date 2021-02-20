@@ -71,4 +71,4 @@ elif [ "${howard}" = "2" ]; then
 elif [ "${howard}" = "3" ]; then
 	echo "goodbye"
 fi
-rm -f /etc/v2rayinstall/*
+rm v2rayinstall.sh
