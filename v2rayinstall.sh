@@ -65,4 +65,3 @@ elif [ "${howard}" = "2" ]; then
 elif [ "${howard}" = "3" ]; then
 	echo "goodbye"
 fi
-cd
