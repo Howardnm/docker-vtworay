@@ -14,7 +14,7 @@ rm -f *
         systemctl enable docker
         echo "安装docker环境...安装完成!"
     fi
-read -t 30 -p "输入：1、安装 2、卸载 3、退出 :" howard
+read -t 30 -p "输入：\n 1、安装 \n 2、卸载 \n 3、退出 :" howard
 if [ "${howard}" = "1" ]; then
 	read -t 30 -p "是否安装v2ray? y or n :" vtworay
 	if [ "${vtworay}" = "y" ]; then
@@ -36,14 +36,14 @@ if [ "${howard}" = "1" ]; then
 	if [ "${vtworay}" = "y" ]; then
 		echo "订阅后，修改ip即可使用"
 		echo "vmess://ew0KICAidiI6ICIyIiwNCiAgInBzIjogInYycmF5IiwNCiAgImFkZCI6ICIwLjAuMC4wIiwNCiAgInBvcnQiOiAiNTIwMDEiLA0KICAiaWQiOiAiOWFjOWEwYjMtZTgwYi00NjZiLTgxM2EtNzM4YzZjZmQ0NmNkIiwNCiAgImFpZCI6ICIyMCIsDQogICJuZXQiOiAia2NwIiwNCiAgInR5cGUiOiAibm9uZSIsDQogICJob3N0IjogIiIsDQogICJwYXRoIjogIiIsDQogICJ0bHMiOiAiIg0KfQ=="
-	if [ "${vtworay}" = "n" ]; then
+	elif [ "${vtworay}" = "n" ]; then
 		echo "---"
 	fi
 	if [ "${ssrss}" = "y" ]; then
 		echo "订阅后，修改ip即可使用"
 		echo "ss://YWVzLTEyOC1nY206aHhjMTIzQDAuMC4wLjA6NTQwMTk#ss"
 		echo "ssr://MC4wLjAuMDo1NDAwOTpvcmlnaW46YWVzLTEyOC1jZmI6cGxhaW46YUhoak1USXovP3JlbWFya3M9YzNOeSZwcm90b3BhcmFtPSZvYmZzcGFyYW09"
-	if [ "${ssrss}" = "n" ]; then
+	elif [ "${ssrss}" = "n" ]; then
 		echo "---"
 	fi
 elif [ "${howard}" = "2" ]; then
