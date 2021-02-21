@@ -1,4 +1,6 @@
 # vtworay
+docker v2ray 一键安装脚本
+
 # 复制到ssh运行
 ```bash
 yum -y install wget
