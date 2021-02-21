@@ -13,7 +13,7 @@ mkdir /etc/v2ray
         echo -e "安装docker环境...安装完成!"
     fi
 clear
-    echo -e "一键安装v2ray脚本howard 2021-2-21 v1.3
+    echo -e "一键安装v2ray脚本howard 2021-2-21 v1.4
 ————————————————————————————————
  ${Green_font_prefix}1.${Font_color_suffix} 安装 v2ray ssr ss
  ${Green_font_prefix}2.${Font_color_suffix} 卸载 v2ray ssr ss
