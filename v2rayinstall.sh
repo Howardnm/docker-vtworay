@@ -14,7 +14,7 @@ mkdir /etc/v2ray
 	sleep 1
     fi
 clear
-    echo -e "一键安装v2ray脚本howard v1.8
+    echo -e "一键安装v2ray脚本howard v1.9
 ————————————————————————————————
  ${Green_font_prefix}1.${Font_color_suffix} 安装 v2ray ssr ss
  ${Green_font_prefix}2.${Font_color_suffix} 卸载 v2ray ssr ss
@@ -101,15 +101,15 @@ docker ps
 echo -e "————————————————————————————————"
 elif [ "${howard}" = "3" ]; then
 clear
-    echo -e "下载方法：
-————————————————————————————————
- ${Green_font_prefix}1.${Font_color_suffix} 使用Xshell软件下载（建议，下载速度快）
- 请用Xshell登录ssh，才能运行该选项
- Xshell下载地址：https://download.netsarang.com/67698f21/Xshell-7.0.0056p.exe
- ————————————————————————————————
- ${Green_font_prefix}2.${Font_color_suffix} 自动生成网页，在浏览器下载（简单）
- ${Green_font_prefix}3.${Font_color_suffix} 退出
-————————————————————————————————"
+	    echo -e "下载方法：
+	————————————————————————————————
+	 ${Green_font_prefix}1.${Font_color_suffix} 使用Xshell软件下载（建议，下载速度快）
+	 请用Xshell登录ssh，才能运行该选项
+	 Xshell下载地址：https://download.netsarang.com/67698f21/Xshell-7.0.0056p.exe
+	 ————————————————————————————————
+	 ${Green_font_prefix}2.${Font_color_suffix} 自动生成网页，在浏览器下载（简单）
+	 ${Green_font_prefix}3.${Font_color_suffix} 退出
+	————————————————————————————————"
 	read -t 30 -p "输入对应数字【1-3】 :" downloadss
 	if [ "${downloadss}" = "1" ]; then
 clear
@@ -121,43 +121,44 @@ clear
 	 ${Green_font_prefix}4.${Font_color_suffix} 退出
 	————————————————————————————————"
 	read -t 30 -p "输入对应数字【1-4】 :" downloadsclient
-		if [ "${downloadsclient}" = "1" ]; then
-			rz -h
-			if [ $? -eq  0 ]; then
+			if [ "${downloadsclient}" = "1" ]; then
+				rz -h
+				if [ $? -eq  0 ]; then
 clear
-			echo "准备中。。。"
-			else
-			yum -y install lrzsz
+				echo "准备中。。。"
+				else
+				yum -y install lrzsz
 clear
+				fi
+			rm /etc/v2ray/v2rayN-Core.zip
+			wget -P /etc/v2ray/ https://github.com/Howardnm/vtworay/releases/download/v2rayN/v2rayN-Core.zip
+			sz /etc/v2ray/v2rayN-Core.zip
+			elif [ "${downloadsclient}" = "2" ]; then
+				rz -h
+				if [ $? -eq  0 ]; then
+clear
+				echo "准备中。。。"
+				else
+				yum -y install lrzsz
+clear
+				fi
+			rm /etc/v2ray/Shadowsocks.zip
+			wget -P /etc/v2ray/ https://github.com/Howardnm/vtworay/releases/download/v2rayN/Shadowsocks.zip
+			sz /etc/v2ray/Shadowsocks.zip
+			elif [ "${downloadsclient}" = "3" ]; then
+				rz -h
+				if [ $? -eq  0 ]; then
+clear
+				echo "准备中。。。"
+				else
+				yum -y install lrzsz
+clear
+				fi
 			fi
-		rm /etc/v2ray/v2rayN-Core.zip
-		wget -P /etc/v2ray/ https://github.com/Howardnm/vtworay/releases/download/v2rayN/v2rayN-Core.zip
-		sz /etc/v2ray/v2rayN-Core.zip
-		elif [ "${downloadsclient}" = "2" ]; then
-			rz -h
-			if [ $? -eq  0 ]; then
-clear
-			echo "准备中。。。"
-			else
-			yum -y install lrzsz
-clear
-			fi
-		rm /etc/v2ray/Shadowsocks.zip
-		wget -P /etc/v2ray/ https://github.com/Howardnm/vtworay/releases/download/v2rayN/Shadowsocks.zip
-		sz /etc/v2ray/Shadowsocks.zip
-		elif [ "${downloadsclient}" = "3" ]; then
-			rz -h
-			if [ $? -eq  0 ]; then
-clear
-			echo "准备中。。。"
-			else
-			yum -y install lrzsz
-clear
-			fi
-		rm /etc/v2ray/ShadowsocksR-win.zip
-		wget -P /etc/v2ray/ https://github.com/Howardnm/vtworay/releases/download/v2rayN/ShadowsocksR-win.zip
-		sz /etc/v2ray/ShadowsocksR-win.zip
-		fi
+	rm /etc/v2ray/ShadowsocksR-win.zip
+	wget -P /etc/v2ray/ https://github.com/Howardnm/vtworay/releases/download/v2rayN/ShadowsocksR-win.zip
+	sz /etc/v2ray/ShadowsocksR-win.zip
+	fi
 	if [ "${downloadss}" = "2" ]; then
 	docker stop filebrowser
 	docker rm filebrowser
@@ -172,6 +173,7 @@ clear
 	echo -n "请在浏览器打开 http://" ; echo $wanip ; echo ":5050"
 	echo "账号：admin 密码：admin"
 	echo "在网页进行下载软件"
+	fi
 else
 clear
 	    echo -e "
