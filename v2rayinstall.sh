@@ -26,13 +26,15 @@ if [ "${howard}" = "1" ]; then
 		rm -f /etc/v2ray/*
 		wget -P /etc/v2ray/ https://raw.githubusercontent.com/Howardnm/vtworay/main/config_mkcp_detour.json 
 		wget -P /etc/v2ray/ https://raw.githubusercontent.com/Howardnm/vtworay/main/config_tcp.json 
-		wget -P /etc/v2ray/ https://raw.githubusercontent.com/Howardnm/vtworay/main/config_mkcp.json		  
+		wget -P /etc/v2ray/ https://raw.githubusercontent.com/Howardnm/vtworay/main/config_mkcp.json
+		mkdir /etc/v2ray/env
 		awk '/port/' /etc/v2ray/config_tcp.json>/etc/v2ray/env/config_tcp_port.json
 		awk '{print $2}' /etc/v2ray/env/config_tcp_port.json>/etc/v2ray/env/config_tcp_port2.json
 		tcpport=$(cat /etc/v2ray/env/config_tcp_port2.json)
 		awk '/port/' /etc/v2ray/config_mkcp.json>/etc/v2ray/env/config_mkcp_port.json
 		awk '{print $2}' /etc/v2ray/env/config_mkcp_port.json>/etc/v2ray/env/config_mkcp_port2.json
 		mkcpport=$(cat /etc/v2ray/env/config_mkcp_port2.json)
+		rm -f /etc/v2ray/env/*
 		docker run -d --name v2ray_mkcp --restart=always -v /etc/v2ray:/etc/v2ray -p ${mkcpport}:${mkcpport} -p ${mkcpport}:${mkcpport}/udp v2fly/v2fly-core  v2ray -config=/etc/v2ray/config_mkcp.json
 		docker run -d --name v2ray_tcp --restart=always -v /etc/v2ray:/etc/v2ray -p ${tcpport}:${tcpport} -p ${tcpport}:${tcpport}/udp v2fly/v2fly-core  v2ray -config=/etc/v2ray/config_tcp.json
 clear
