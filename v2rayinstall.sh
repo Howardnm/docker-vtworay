@@ -14,7 +14,7 @@ mkdir /etc/v2ray
 	sleep 1
     fi
 clear
-    echo -e "一键安装v2ray脚本howard v2.0
+    echo -e "  一键安装v2ray脚本 howard v2.1
 ————————————————————————————————
  ${Green_font_prefix}1.${Font_color_suffix} 安装 v2ray ssr ss
  ${Green_font_prefix}2.${Font_color_suffix} 卸载 v2ray ssr ss
@@ -104,8 +104,9 @@ clear
 	    echo -e "下载方法：
 ————————————————————————————————
 ${Green_font_prefix}1.${Font_color_suffix} 自动生成一个网页，在浏览器下载（强烈建议）
-${Green_font_prefix}2.${Font_color_suffix} 使用Xshell软件下载(请用Xshell登录ssh，才能运行该选项)
+${Green_font_prefix}2.${Font_color_suffix} 直接ssh下载(请用Xshell登录ssh，才能运行该选项)
 ${Green_font_prefix}3.${Font_color_suffix} 退出
+————————————————————————————————
 在github直接下载客户端：https://github.com/Howardnm/vtworay/releases/tag/v2rayN
 Xshell下载地址：https://download.netsarang.com/67698f21/Xshell-7.0.0056p.exe
 ————————————————————————————————"
