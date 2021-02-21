@@ -24,7 +24,7 @@ bbr，建议在centos 7运行，看文字输入数字，步骤：1、安装bbrpl
 ```bash
 wget -N --no-check-certificate "https://raw.githubusercontent.com/chiakge/Linux-NetSpeed/master/tcp.sh" && chmod +x tcp.sh && ./tcp.sh
 ```
-##### 3、一键docker 应用软件脚本（可选）
+##### 3、docker应用软件一键脚本（可选）
 ```bash
 wget  https://raw.githubusercontent.com/Howardnm/vtworay/main/dockerotherinstall.sh && chmod +x dockerotherinstall.sh && ./dockerotherinstall.sh
 ```
