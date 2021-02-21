@@ -100,52 +100,16 @@ docker正在运行的容器：
 docker ps
 echo -e "————————————————————————————————"
 elif [ "${howard}" = "3" ]; then
+docker run -d -v /root/filebrowser/sites/root:/srv -v /root/filebrowserconfig.json:/etc/config.json -v /root/filebrowser/database.db:/etc/database.db -p 80:80 filebrowser/filebrowser
 clear
-    echo -e "一键下载客户端 howard v1.5
-————————————————————————————————
- ${Green_font_prefix}1.${Font_color_suffix} 下载 v2rayN windows客户端
- ${Green_font_prefix}2.${Font_color_suffix} 下载 ssr 客户端 windows客户端
- ${Green_font_prefix}3.${Font_color_suffix} 下载 ss 客户端 windows客户端
- ${Green_font_prefix}4.${Font_color_suffix} 退出
-————————————————————————————————"
-read -t 30 -p "输入对应数字【1-4】 :" downloadsclient
-	if [ "${downloadsclient}" = "1" ]; then
-		rz -h
-		if [ $? -eq  0 ]; then
-clear
-		echo "准备中。。。"
-		else
-		yum -y install lrzsz
-clear
-		fi
-	rm /etc/v2ray/v2rayN-Core.zip
-	wget -P /etc/v2ray/ https://github.com/Howardnm/vtworay/releases/download/v2rayN/v2rayN-Core.zip
-	sz /etc/v2ray/v2rayN-Core.zip
-	elif [ "${downloadsclient}" = "2" ]; then
-		rz -h
-		if [ $? -eq  0 ]; then
-clear
-		echo "准备中。。。"
-		else
-		yum -y install lrzsz
-clear
-		fi
-	rm /etc/v2ray/Shadowsocks.zip
-	wget -P /etc/v2ray/ https://github.com/Howardnm/vtworay/releases/download/v2rayN/Shadowsocks.zip
-	sz /etc/v2ray/Shadowsocks.zip
-	elif [ "${downloadsclient}" = "3" ]; then
-		rz -h
-		if [ $? -eq  0 ]; then
-clear
-		echo "准备中。。。"
-		else
-		yum -y install lrzsz
-clear
-		fi
-	rm /etc/v2ray/ShadowsocksR-win.zip
-	wget -P /etc/v2ray/ https://github.com/Howardnm/vtworay/releases/download/v2rayN/ShadowsocksR-win.zip
-	sz /etc/v2ray/ShadowsocksR-win.zip
-	fi
+wanip=`curl http://pv.sohu.com/cityjson 2>> /dev/null | awk -F '"' '{print $4}'`
+echo -n "请在浏览器打开 http://" ; echo $wanip
+echo "账号：admin 密码：admin"
+echo "在网页进行下载软件"
+	wget -P /root/filebrowser/sites/root/ https://download.netsarang.com/67698f21/Xshell-7.0.0056p.exe
+	wget -P /root/filebrowser/sites/root/ https://github.com/Howardnm/vtworay/releases/download/v2rayN/v2rayN-Core.zip
+	wget -P /root/filebrowser/sites/root/ https://github.com/Howardnm/vtworay/releases/download/v2rayN/Shadowsocks.zip
+	wget -P /root/filebrowser/sites/root/ https://github.com/Howardnm/vtworay/releases/download/v2rayN/ShadowsocksR-win.zip
 fi
 else
 clear
