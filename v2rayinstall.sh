@@ -100,7 +100,9 @@ docker正在运行的容器：
 docker ps
 echo -e "————————————————————————————————"
 elif [ "${howard}" = "3" ]; then
-docker run -d -v /root/filebrowser/sites/root:/srv -v /root/filebrowserconfig.json:/etc/config.json -v /root/filebrowser/database.db:/etc/database.db -p 80:80 filebrowser/filebrowser
+docker stop filebrowser
+docker rm filebrowser
+docker run -d -p 80:80 --name filebrowser  -v /root/filebrowser/sites/root:/srv -v /root/filebrowserconfig.json:/etc/config.json -v /root/filebrowser/database.db:/etc/database.db filebrowser/filebrowser
 clear
 wanip=`curl http://pv.sohu.com/cityjson 2>> /dev/null | awk -F '"' '{print $4}'`
 echo -n "请在浏览器打开 http://" ; echo $wanip
