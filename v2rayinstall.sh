@@ -48,7 +48,9 @@ clear
 	if [ "${vtworay}" = "y" ]; then
 	echo -e "订阅后，修改ip即可使用
 	————————————————————————————————
-	vmess://ew0KICAidiI6ICIyIiwNCiAgInBzIjogInYycmF5IiwNCiAgImFkZCI6ICIwLjAuMC4wIiwNCiAgInBvcnQiOiAiNTIwMDEiLA0KICAiaWQiOiAiOWFjOWEwYjMtZTgwYi00NjZiLTgxM2EtNzM4YzZjZmQ0NmNkIiwNCiAgImFpZCI6ICIyMCIsDQogICJuZXQiOiAia2NwIiwNCiAgInR5cGUiOiAibm9uZSIsDQogICJob3N0IjogIiIsDQogICJwYXRoIjogIiIsDQogICJ0bHMiOiAiIg0KfQ==
+	vmess://ew0KICAidiI6ICIyIiwNCiAgInBzIjogInYycmF5LWttY3AiLA0KICAiYWRkIjogIjAuMC4wLjAiLA0KICAicG9ydCI6ICI1MjAwMSIsDQogICJpZCI6ICI5YWM5YTBiMy1lODBiLTQ2NmItODEzYS03MzhjNmNmZDQ2Y2QiLA0KICAiYWlkIjogIjIwIiwNCiAgIm5ldCI6ICJrY3AiLA0KICAidHlwZSI6ICJub25lIiwNCiAgImhvc3QiOiAiIiwNCiAgInBhdGgiOiAiIiwNCiAgInRscyI6ICIiLA0KICAic25pIjogIiINCn0=
+	
+	vmess://ew0KICAidiI6ICIyIiwNCiAgInBzIjogInYycmF5LXRjcCIsDQogICJhZGQiOiAiMC4wLjAuMCIsDQogICJwb3J0IjogIjUxMDAxIiwNCiAgImlkIjogIjlhYzlhMGIzLWU4MGItNDY2Yi04MTNhLTczOGM2Y2ZkNDZjZCIsDQogICJhaWQiOiAiMjAiLA0KICAibmV0IjogInRjcCIsDQogICJ0eXBlIjogIm5vbmUiLA0KICAiaG9zdCI6ICIiLA0KICAicGF0aCI6ICIiLA0KICAidGxzIjogIiIsDQogICJzbmkiOiAiIg0KfQ==
 	————————————————————————————————"
 	fi
 	if [ "${ssrss}" = "y" ]; then
