@@ -100,7 +100,8 @@ docker正在运行的容器：
 docker ps
 echo -e "————————————————————————————————"
 elif [ "${howard}" = "3" ]; then
-    echo -e "一键安装v2ray脚本howard v1.5
+clear
+    echo -e "一键下载客户端 howard v1.5
 ————————————————————————————————
  ${Green_font_prefix}1.${Font_color_suffix} 下载 v2rayN windows客户端
  ${Green_font_prefix}2.${Font_color_suffix} 下载 ssr 客户端 windows客户端
@@ -111,9 +112,11 @@ read -t 30 -p "输入对应数字【1-4】 :" downloadsclient
 	if [ "${downloadsclient}" = "1" ]; then
 		rz -h
 		if [ $? -eq  0 ]; then
+clear
 		echo "准备中。。。"
 		else
 		yum -y install lrzsz
+clear
 		fi
 	rm /etc/v2ray/v2rayN-Core.zip
 	wget -P /etc/v2ray/ https://github.com/Howardnm/vtworay/releases/download/v2rayN/v2rayN-Core.zip
@@ -121,9 +124,11 @@ read -t 30 -p "输入对应数字【1-4】 :" downloadsclient
 	elif [ "${downloadsclient}" = "2" ]; then
 		rz -h
 		if [ $? -eq  0 ]; then
+clear
 		echo "准备中。。。"
 		else
 		yum -y install lrzsz
+clear
 		fi
 	rm /etc/v2ray/Shadowsocks.zip
 	wget -P /etc/v2ray/ https://github.com/Howardnm/vtworay/releases/download/v2rayN/Shadowsocks.zip
@@ -131,9 +136,11 @@ read -t 30 -p "输入对应数字【1-4】 :" downloadsclient
 	elif [ "${downloadsclient}" = "3" ]; then
 		rz -h
 		if [ $? -eq  0 ]; then
+clear
 		echo "准备中。。。"
 		else
 		yum -y install lrzsz
+clear
 		fi
 	rm /etc/v2ray/ShadowsocksR-win.zip
 	wget -P /etc/v2ray/ https://github.com/Howardnm/vtworay/releases/download/v2rayN/ShadowsocksR-win.zip
