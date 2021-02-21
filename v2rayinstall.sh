@@ -13,7 +13,7 @@ mkdir /etc/v2ray
         echo -e "安装docker环境...安装完成!"
     fi
 clear
-    echo -e "一键安装v2ray脚本howard 2021-2-21 v1.1
+    echo -e "一键安装v2ray脚本howard 2021-2-21 v1.2
 ————————————————————————————————
  ${Green_font_prefix}1.${Font_color_suffix} 安装 v2ray ssr ss
  ${Green_font_prefix}2.${Font_color_suffix} 卸载 v2ray ssr ss
@@ -29,13 +29,12 @@ if [ "${howard}" = "1" ]; then
 		wget -P /etc/v2ray/ https://raw.githubusercontent.com/Howardnm/vtworay/main/config_mkcp.json		  
 		awk '/port/' /etc/v2ray/config_tcp.json>/etc/v2ray/env/config_tcp_port.json
 		awk '{print $2}' /etc/v2ray/env/config_tcp_port.json>/etc/v2ray/env/config_tcp_port2.json
-		tcp_port=$(cat /etc/v2ray/env/config_tcp_port2.json)
+		tcpport=$(cat /etc/v2ray/env/config_tcp_port2.json)
 		awk '/port/' /etc/v2ray/config_mkcp.json>/etc/v2ray/env/config_mkcp_port.json
 		awk '{print $2}' /etc/v2ray/env/config_mkcp_port.json>/etc/v2ray/env/config_mkcp_port2.json
-		mkcp_port=$(cat /etc/v2ray/env/config_mkcp_port2.json)
-		rm -f /etc/v2ray/env/*
-		docker run -d --name v2ray_mkcp --restart=always -v /etc/v2ray:/etc/v2ray -p ${mkcp_port}:${mkcp_port} -p ${mkcp_port}:${mkcp_port}/udp v2fly/v2fly-core  v2ray -config=/etc/v2ray/config_mkcp.json
-		docker run -d --name v2ray_tcp --restart=always -v /etc/v2ray:/etc/v2ray -p ${tcp_port}:${tcp_port} -p {tcp_port}:${tcp_port}/udp v2fly/v2fly-core  v2ray -config=/etc/v2ray/config_tcp.json
+		mkcpport=$(cat /etc/v2ray/env/config_mkcp_port2.json)
+		docker run -d --name v2ray_mkcp --restart=always -v /etc/v2ray:/etc/v2ray -p ${mkcpport}:${mkcpport} -p ${mkcpport}:${mkcpport}/udp v2fly/v2fly-core  v2ray -config=/etc/v2ray/config_mkcp.json
+		docker run -d --name v2ray_tcp --restart=always -v /etc/v2ray:/etc/v2ray -p ${tcpport}:${tcpport} -p ${tcpport}:${tcpport}/udp v2fly/v2fly-core  v2ray -config=/etc/v2ray/config_tcp.json
 clear
 	fi
 	echo "————————————————————————————————"
