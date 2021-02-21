@@ -22,5 +22,5 @@ wget  https://raw.githubusercontent.com/Howardnm/vtworay/main/v2rayinstall.sh &&
 <img src="https://github.com/Howardnm/vtworay/raw/main/images/ssr.jpg" width="15%">
 
 ###### vmmess
-<img src="https://github.com/Howardnm/vtworay/raw/main/images/vmesstcp.jpg" width="20%">   <img src="https://github.com/Howardnm/vtworay/raw/main/images/vmessmkcp" width="20%">
+<img src="https://github.com/Howardnm/vtworay/raw/main/images/vmesstcp.jpg" width="20%">   <img src="https://github.com/Howardnm/vtworay/raw/main/images/vmessmkcp.jpg" width="20%">
 
