@@ -11,6 +11,7 @@ mkdir /etc/v2ray
         systemctl start docker
         systemctl enable docker
         echo -e "安装docker环境...安装完成!"
+	sleep 1
     fi
 clear
     echo -e "一键安装v2ray脚本howard 2021-2-21 v1.4
@@ -87,6 +88,8 @@ elif [ "${howard}" = "2" ]; then
 	elif [ "${ssrssdel}" = "n" ]; then
 		echo "---"
 	fi
+sleep 1
+clear
 echo -e "
 ————————————————————————————————
 goodbye friends！！！
