@@ -41,6 +41,15 @@ elif [ "${dockerin}" = "5" ]; then
 	docker rm qbittorrent
 	echo "已卸载 qbittorrent"
 	fi
+clear
+	    echo -e "
+————————————————————————————————
+goodbye friends！！！
+————————————————————————————————
+docker正在运行的容器：
+————————————————————————————————"
+docker ps
+echo -e "————————————————————————————————"
 else
 clear
 	    echo -e "
