@@ -173,10 +173,11 @@ clear
 				yum -y install lrzsz
 clear
 				fi
+			rm /etc/v2ray/ShadowsocksR-win.zip
+			wget -P /etc/v2ray/ https://github.com/Howardnm/vtworay/releases/download/v2rayN/ShadowsocksR-win.zip
+			sz /etc/v2ray/ShadowsocksR-win.zip
 			fi
-	rm /etc/v2ray/ShadowsocksR-win.zip
-	wget -P /etc/v2ray/ https://github.com/Howardnm/vtworay/releases/download/v2rayN/ShadowsocksR-win.zip
-	sz /etc/v2ray/ShadowsocksR-win.zip
+
 	fi
 else
 clear
