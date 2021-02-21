@@ -14,7 +14,7 @@ mkdir /etc/v2ray
 	sleep 1
     fi
 clear
-    echo -e "  一键安装v2ray脚本 howard v2.3
+    echo -e "  一键安装v2ray脚本 howard v2.4
 ————————————————————————————————
  ${Green_font_prefix}1.${Font_color_suffix} 安装 v2ray ssr ss
  ${Green_font_prefix}2.${Font_color_suffix} 卸载 v2ray ssr ss
@@ -152,6 +152,7 @@ clear
 			rm /etc/v2ray/v2rayN-Core.zip
 			wget -P /etc/v2ray/ https://github.com/Howardnm/vtworay/releases/download/v2rayN/v2rayN-Core.zip
 			sz /etc/v2ray/v2rayN-Core.zip
+			echo "结束"
 			elif [ "${downloadsclient}" = "2" ]; then
 				rz -h
 				if [ $? -eq  0 ]; then
@@ -164,6 +165,7 @@ clear
 			rm /etc/v2ray/Shadowsocks.zip
 			wget -P /etc/v2ray/ https://github.com/Howardnm/vtworay/releases/download/v2rayN/Shadowsocks.zip
 			sz /etc/v2ray/Shadowsocks.zip
+			echo "结束"
 			elif [ "${downloadsclient}" = "3" ]; then
 				rz -h
 				if [ $? -eq  0 ]; then
@@ -176,6 +178,7 @@ clear
 			rm /etc/v2ray/ShadowsocksR-win.zip
 			wget -P /etc/v2ray/ https://github.com/Howardnm/vtworay/releases/download/v2rayN/ShadowsocksR-win.zip
 			sz /etc/v2ray/ShadowsocksR-win.zip
+			echo "结束"
 			fi
 
 	fi
