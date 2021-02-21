@@ -103,14 +103,29 @@ elif [ "${howard}" = "3" ]; then
 clear
 	    echo -e "下载方法：
 ————————————————————————————————
-${Green_font_prefix}1.${Font_color_suffix} 使用Xshell软件下载(请用Xshell登录ssh，才能运行该选项)
-${Green_font_prefix}2.${Font_color_suffix} 自动生成网页，在浏览器下载（简单）
+${Green_font_prefix}1.${Font_color_suffix} 自动生成一个网页，在浏览器下载（强烈建议）
+${Green_font_prefix}2.${Font_color_suffix} 使用Xshell软件下载(请用Xshell登录ssh，才能运行该选项)
 ${Green_font_prefix}3.${Font_color_suffix} 退出
 在github直接下载客户端：https://github.com/Howardnm/vtworay/releases/tag/v2rayN
 Xshell下载地址：https://download.netsarang.com/67698f21/Xshell-7.0.0056p.exe
 ————————————————————————————————"
 	read -t 30 -p "输入对应数字【1-3】 :" downloadss
 	if [ "${downloadss}" = "1" ]; then
+	docker stop filebrowser
+	docker rm filebrowser
+	docker run -d -p 80:80 --name filebrowser  -v /root/filebrowser/sites/root:/srv -v /root/filebrowserconfig.json:/etc/config.json -v /root/filebrowser/database.db:/etc/database.db filebrowser/filebrowser
+	wanip=`curl http://pv.sohu.com/cityjson 2>> /dev/null | awk -F '"' '{print $4}'`
+	rm -f /root/filebrowser/sites/root/*
+	wget -P /root/filebrowser/sites/root/ https://download.netsarang.com/67698f21/Xshell-7.0.0056p.exe
+	wget -P /root/filebrowser/sites/root/ https://github.com/Howardnm/vtworay/releases/download/v2rayN/v2rayN-Core.zip
+	wget -P /root/filebrowser/sites/root/ https://github.com/Howardnm/vtworay/releases/download/v2rayN/Shadowsocks.zip
+	wget -P /root/filebrowser/sites/root/ https://github.com/Howardnm/vtworay/releases/download/v2rayN/ShadowsocksR-win.zip
+	clear
+	echo -n "请在浏览器打开 http://" ; echo $wanip
+	echo "账号：admin 密码：admin"
+	echo "在网页进行下载软件"
+	fi
+	if [ "${downloadss}" = "2" ]; then
 clear
 	    echo -e "一键下载客户端
 ————————————————————————————————
@@ -157,21 +172,6 @@ clear
 	rm /etc/v2ray/ShadowsocksR-win.zip
 	wget -P /etc/v2ray/ https://github.com/Howardnm/vtworay/releases/download/v2rayN/ShadowsocksR-win.zip
 	sz /etc/v2ray/ShadowsocksR-win.zip
-	fi
-	if [ "${downloadss}" = "2" ]; then
-	docker stop filebrowser
-	docker rm filebrowser
-	docker run -d -p 80:80 --name filebrowser  -v /root/filebrowser/sites/root:/srv -v /root/filebrowserconfig.json:/etc/config.json -v /root/filebrowser/database.db:/etc/database.db filebrowser/filebrowser
-	wanip=`curl http://pv.sohu.com/cityjson 2>> /dev/null | awk -F '"' '{print $4}'`
-	rm -f /root/filebrowser/sites/root/*
-	wget -P /root/filebrowser/sites/root/ https://download.netsarang.com/67698f21/Xshell-7.0.0056p.exe
-	wget -P /root/filebrowser/sites/root/ https://github.com/Howardnm/vtworay/releases/download/v2rayN/v2rayN-Core.zip
-	wget -P /root/filebrowser/sites/root/ https://github.com/Howardnm/vtworay/releases/download/v2rayN/Shadowsocks.zip
-	wget -P /root/filebrowser/sites/root/ https://github.com/Howardnm/vtworay/releases/download/v2rayN/ShadowsocksR-win.zip
-	clear
-	echo -n "请在浏览器打开 http://" ; echo $wanip
-	echo "账号：admin 密码：admin"
-	echo "在网页进行下载软件"
 	fi
 else
 clear
