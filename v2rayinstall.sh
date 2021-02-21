@@ -126,7 +126,7 @@ Xshell下载地址：https://download.netsarang.com/67698f21/Xshell-7.0.0056p.ex
 	echo " "
 	echo "账号：admin 密码：admin"
 	echo "————————————————————————————————"
-	echo "在网页进行下载软件"
+	echo "在网页进行下载客户端"
 	echo "————————————————————————————————"
 	fi
 	if [ "${downloadss}" = "2" ]; then
