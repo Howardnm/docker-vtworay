@@ -1,7 +1,7 @@
 {
     "inbounds": [
       {
-        "port": 52001, // 服务器监听端口
+        "port": 52001 , // 服务器监听端口
         "protocol": "vmess",    // 主传入协议
         "settings": {
           "clients": [
