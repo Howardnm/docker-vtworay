@@ -121,9 +121,13 @@ Xshell下载地址：https://download.netsarang.com/67698f21/Xshell-7.0.0056p.ex
 	wget -P /root/filebrowser/sites/root/ https://github.com/Howardnm/vtworay/releases/download/v2rayN/Shadowsocks.zip
 	wget -P /root/filebrowser/sites/root/ https://github.com/Howardnm/vtworay/releases/download/v2rayN/ShadowsocksR-win.zip
 	clear
+	echo "————————————————————————————————"
 	echo -n "请在浏览器打开 http://" ; echo $wanip
+	echo " "
 	echo "账号：admin 密码：admin"
+	echo "————————————————————————————————"
 	echo "在网页进行下载软件"
+	echo "————————————————————————————————"
 	fi
 	if [ "${downloadss}" = "2" ]; then
 clear
