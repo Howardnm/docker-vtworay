@@ -114,7 +114,7 @@ Xshell下载地址：https://download.netsarang.com/67698f21/Xshell-7.0.0056p.ex
 	if [ "${downloadss}" = "1" ]; then
 	docker stop filebrowser
 	docker rm filebrowser
-	rm -f /root/filebrowser/*
+	rm -rf /root/filebrowser
 	docker run -d -p 80:80 --name filebrowser  -v /root/filebrowser/sites/root:/srv -v /root/filebrowserconfig.json:/etc/config.json -v /root/filebrowser/database.db:/etc/database.db filebrowser/filebrowser
 	wanip=`curl http://pv.sohu.com/cityjson 2>> /dev/null | awk -F '"' '{print $4}'`
 	wget -P /root/filebrowser/sites/root/ https://github.com/Howardnm/vtworay/releases/download/v2rayN/Xshell-7.0.0054p.exe
