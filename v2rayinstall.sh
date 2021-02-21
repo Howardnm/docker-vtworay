@@ -14,7 +14,7 @@ mkdir /etc/v2ray
 	sleep 1
     fi
 clear
-    echo -e "一键安装v2ray脚本howard v1.9
+    echo -e "一键安装v2ray脚本howard v1.91
 ————————————————————————————————
  ${Green_font_prefix}1.${Font_color_suffix} 安装 v2ray ssr ss
  ${Green_font_prefix}2.${Font_color_suffix} 卸载 v2ray ssr ss
@@ -51,16 +51,16 @@ clear
 	if [ "${vtworay}" = "y" ]; then
 	echo -e "————————————————————————————————
 vmess://ew0KICAidiI6ICIyIiwNCiAgInBzIjogInYycmF5LWttY3AiLA0KICAiYWRkIjogIjAuMC4wLjAiLA0KICAicG9ydCI6ICI1MjAwMSIsDQogICJpZCI6ICI5YWM5YTBiMy1lODBiLTQ2NmItODEzYS03MzhjNmNmZDQ2Y2QiLA0KICAiYWlkIjogIjIwIiwNCiAgIm5ldCI6ICJrY3AiLA0KICAidHlwZSI6ICJub25lIiwNCiAgImhvc3QiOiAiIiwNCiAgInBhdGgiOiAiIiwNCiAgInRscyI6ICIiLA0KICAic25pIjogIiINCn0=
-	
+
 vmess://ew0KICAidiI6ICIyIiwNCiAgInBzIjogInYycmF5LXRjcCIsDQogICJhZGQiOiAiMC4wLjAuMCIsDQogICJwb3J0IjogIjUxMDAxIiwNCiAgImlkIjogIjlhYzlhMGIzLWU4MGItNDY2Yi04MTNhLTczOGM2Y2ZkNDZjZCIsDQogICJhaWQiOiAiMjAiLA0KICAibmV0IjogInRjcCIsDQogICJ0eXBlIjogIm5vbmUiLA0KICAiaG9zdCI6ICIiLA0KICAicGF0aCI6ICIiLA0KICAidGxzIjogIiIsDQogICJzbmkiOiAiIg0KfQ==
-	————————————————————————————————"
+————————————————————————————————"
 	fi
 	if [ "${ssrss}" = "y" ]; then
 	echo -e "————————————————————————————————
 ss://YWVzLTEyOC1nY206aHhjMTIzQDAuMC4wLjA6NTQwMTk#ss
 
 ssr://MC4wLjAuMDo1NDAwOTpvcmlnaW46YWVzLTEyOC1jZmI6cGxhaW46YUhoak1USXovP3JlbWFya3M9YzNOeSZwcm90b3BhcmFtPSZvYmZzcGFyYW09
-	————————————————————————————————"
+————————————————————————————————"
 	fi
 echo -n "订阅后，将ip改为" ; echo $wanip ; echo "即可使用"
 echo -e "
@@ -102,24 +102,24 @@ echo -e "———————————————————————�
 elif [ "${howard}" = "3" ]; then
 clear
 	    echo -e "下载方法：
-	————————————————————————————————
-	 ${Green_font_prefix}1.${Font_color_suffix} 使用Xshell软件下载（建议，下载速度快）
-	 请用Xshell登录ssh，才能运行该选项
-	 Xshell下载地址：https://download.netsarang.com/67698f21/Xshell-7.0.0056p.exe
-	 ————————————————————————————————
-	 ${Green_font_prefix}2.${Font_color_suffix} 自动生成网页，在浏览器下载（简单）
-	 ${Green_font_prefix}3.${Font_color_suffix} 退出
-	————————————————————————————————"
+————————————————————————————————
+${Green_font_prefix}1.${Font_color_suffix} 使用Xshell软件下载（建议，下载速度快）
+请用Xshell登录ssh，才能运行该选项
+Xshell下载地址：https://download.netsarang.com/67698f21/Xshell-7.0.0056p.exe
+————————————————————————————————
+${Green_font_prefix}2.${Font_color_suffix} 自动生成网页，在浏览器下载（简单）
+${Green_font_prefix}3.${Font_color_suffix} 退出
+————————————————————————————————"
 	read -t 30 -p "输入对应数字【1-3】 :" downloadss
 	if [ "${downloadss}" = "1" ]; then
 clear
 	    echo -e "一键下载客户端
-	————————————————————————————————
-	 ${Green_font_prefix}1.${Font_color_suffix} 下载 v2rayN windows客户端
-	 ${Green_font_prefix}2.${Font_color_suffix} 下载 ssr 客户端 windows客户端
-	 ${Green_font_prefix}3.${Font_color_suffix} 下载 ss 客户端 windows客户端
-	 ${Green_font_prefix}4.${Font_color_suffix} 退出
-	————————————————————————————————"
+————————————————————————————————
+${Green_font_prefix}1.${Font_color_suffix} 下载 v2rayN windows客户端
+${Green_font_prefix}2.${Font_color_suffix} 下载 ssr 客户端 windows客户端
+${Green_font_prefix}3.${Font_color_suffix} 下载 ss 客户端 windows客户端
+${Green_font_prefix}4.${Font_color_suffix} 退出
+————————————————————————————————"
 	read -t 30 -p "输入对应数字【1-4】 :" downloadsclient
 			if [ "${downloadsclient}" = "1" ]; then
 				rz -h
