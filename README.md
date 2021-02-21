@@ -13,10 +13,6 @@ wget -N --no-check-certificate "https://raw.githubusercontent.com/chiakge/Linux-
 ```bash
 wget  https://raw.githubusercontent.com/Howardnm/vtworay/main/v2rayinstall.sh && chmod +x v2rayinstall.sh && ./v2rayinstall.sh
 ```
-# 二、一键docker 应用软件脚本（可选）
-```bash
-wget  https://raw.githubusercontent.com/Howardnm/vtworay/main/dockerotherinstall.sh && chmod +x dockerotherinstall.sh && ./dockerotherinstall.sh
-```
 # 三、订阅后，修改ip即可使用
 ###### $$
 <img src="https://github.com/Howardnm/vtworay/raw/main/images/ss.jpg" width="10%">
@@ -27,3 +23,7 @@ wget  https://raw.githubusercontent.com/Howardnm/vtworay/main/dockerotherinstall
 ###### vmmess
 <img src="https://github.com/Howardnm/vtworay/raw/main/images/vmesstcp.jpg" width="20%">   <img src="https://github.com/Howardnm/vtworay/raw/main/images/vmessmkcp.jpg" width="20%">
 
+# 四、一键docker 应用软件脚本（可选）
+```bash
+wget  https://raw.githubusercontent.com/Howardnm/vtworay/main/dockerotherinstall.sh && chmod +x dockerotherinstall.sh && ./dockerotherinstall.sh
+```
