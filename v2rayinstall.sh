@@ -26,9 +26,16 @@ if [ "${howard}" = "1" ]; then
 		rm -f /etc/v2ray/*
 		wget -P /etc/v2ray/ https://raw.githubusercontent.com/Howardnm/vtworay/main/config_mkcp_detour.json 
 		wget -P /etc/v2ray/ https://raw.githubusercontent.com/Howardnm/vtworay/main/config_tcp.json 
-		wget -P /etc/v2ray/ https://raw.githubusercontent.com/Howardnm/vtworay/main/config_mkcp.json
-		docker run -d --name v2ray_mkcp --restart=always -v /etc/v2ray:/etc/v2ray -p 52001:52001 -p 52001:52001/udp v2fly/v2fly-core  v2ray -config=/etc/v2ray/config_mkcp.json
-		docker run -d --name v2ray_tcp --restart=always -v /etc/v2ray:/etc/v2ray -p 51001:51001 -p 51001:51001/udp v2fly/v2fly-core  v2ray -config=/etc/v2ray/config_tcp.json
+		wget -P /etc/v2ray/ https://raw.githubusercontent.com/Howardnm/vtworay/main/config_mkcp.json		  
+		awk '/port/' /etc/v2ray/config_tcp.json>/etc/v2ray/env/config_tcp_port.json
+		awk '{print $2}' /etc/v2ray/env/config_tcp_port.json>/etc/v2ray/env/config_tcp_port2.json
+		tcp_port=$(cat /etc/v2ray/env/config_tcp_port2.json)
+		awk '/port/' /etc/v2ray/config_mkcp.json>/etc/v2ray/env/config_mkcp_port.json
+		awk '{print $2}' /etc/v2ray/env/config_mkcp_port.json>/etc/v2ray/env/config_mkcp_port2.json
+		mkcp_port=$(cat /etc/v2ray/env/config_mkcp_port2.json)
+		rm -f /etc/v2ray/env/*
+		docker run -d --name v2ray_mkcp --restart=always -v /etc/v2ray:/etc/v2ray -p ${mkcp_port}:${mkcp_port} -p ${mkcp_port}:${mkcp_port}/udp v2fly/v2fly-core  v2ray -config=/etc/v2ray/config_mkcp.json
+		docker run -d --name v2ray_tcp --restart=always -v /etc/v2ray:/etc/v2ray -p ${tcp_port}:${tcp_port} -p {tcp_port}:${tcp_port}/udp v2fly/v2fly-core  v2ray -config=/etc/v2ray/config_tcp.json
 clear
 	fi
 	echo "————————————————————————————————"
