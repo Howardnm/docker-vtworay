@@ -8,12 +8,8 @@
 wget  https://raw.githubusercontent.com/Howardnm/vtworay/main/v2rayinstall.sh && chmod +x v2rayinstall.sh && ./v2rayinstall.sh
 ```
 ## 二、订阅后，修改ip即可使用
-###### $$
-<img src="https://github.com/Howardnm/vtworay/raw/main/images/ss.jpg" width="10%">
-
-###### $$r
-<img src="https://github.com/Howardnm/vtworay/raw/main/images/ssr.jpg" width="15%">
-
+###### $$ 和 $$r
+<img src="https://github.com/Howardnm/vtworay/raw/main/images/ss.jpg" width="10%">    <img src="https://github.com/Howardnm/vtworay/raw/main/images/ssr.jpg" width="15%">
 ###### vmmess
 <img src="https://github.com/Howardnm/vtworay/raw/main/images/vmesstcp.jpg" width="20%">   <img src="https://github.com/Howardnm/vtworay/raw/main/images/vmessmkcp.jpg" width="20%">
 
