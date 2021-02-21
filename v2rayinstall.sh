@@ -21,7 +21,7 @@ clear
  ${Green_font_prefix}3.${Font_color_suffix} 下载客户端
  ${Green_font_prefix}4.${Font_color_suffix} 退出
 ————————————————————————————————"
-read -t 30 -p "输入对应数字【1-3】 :" howard
+read -t 30 -p "输入对应数字【1-4】 :" howard
 if [ "${howard}" = "1" ]; then
 	read -t 30 -p "要安装v2ray ？ y/n :" vtworay
 	if [ "${vtworay}" = "y" ]; then
