@@ -108,10 +108,11 @@ wanip=`curl http://pv.sohu.com/cityjson 2>> /dev/null | awk -F '"' '{print $4}'`
 echo -n "请在浏览器打开 http://" ; echo $wanip
 echo "账号：admin 密码：admin"
 echo "在网页进行下载软件"
-	wget -P /root/filebrowser/sites/root/ https://download.netsarang.com/67698f21/Xshell-7.0.0056p.exe
-	wget -P /root/filebrowser/sites/root/ https://github.com/Howardnm/vtworay/releases/download/v2rayN/v2rayN-Core.zip
-	wget -P /root/filebrowser/sites/root/ https://github.com/Howardnm/vtworay/releases/download/v2rayN/Shadowsocks.zip
-	wget -P /root/filebrowser/sites/root/ https://github.com/Howardnm/vtworay/releases/download/v2rayN/ShadowsocksR-win.zip
+rm -f /root/filebrowser/sites/root/*
+wget -P /root/filebrowser/sites/root/ https://download.netsarang.com/67698f21/Xshell-7.0.0056p.exe
+wget -P /root/filebrowser/sites/root/ https://github.com/Howardnm/vtworay/releases/download/v2rayN/v2rayN-Core.zip
+wget -P /root/filebrowser/sites/root/ https://github.com/Howardnm/vtworay/releases/download/v2rayN/Shadowsocks.zip
+wget -P /root/filebrowser/sites/root/ https://github.com/Howardnm/vtworay/releases/download/v2rayN/ShadowsocksR-win.zip
 fi
 else
 clear
