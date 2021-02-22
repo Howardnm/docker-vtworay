@@ -97,7 +97,7 @@ elif [ "${howard}" = "3" ]; then
 clear
 	    echo -e "下载方法：
 ————————————————————————————————
-${Green_font_prefix}1.${Font_color_suffix} 一键搭建网盘，在浏览器下载（强烈建议）
+${Green_font_prefix}1.${Font_color_suffix} 一键搭建网盘，在浏览器下载（建议）
 ${Green_font_prefix}2.${Font_color_suffix} 直接下载（请用Xshell、FinalShell登录ssh才能运行该选项）
 ${Green_font_prefix}3.${Font_color_suffix} 退出
 ————————————————————————————————
