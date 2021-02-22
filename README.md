@@ -17,7 +17,7 @@ wget  https://raw.githubusercontent.com/Howardnm/vtworay/main/v2rayinstall.sh &&
 <img src="https://github.com/Howardnm/vtworay/raw/main/images/ss.jpg" width="10%"><img src="https://github.com/Howardnm/vtworay/raw/main/images/ssr.jpg" width="10%">
 
 ##### v2ray  （点击图片放大）
-###### mkcp协议，如果vps网络不稳定，扫这个（推荐）
+###### mkcp协议，如果vps网络不稳定，扫这个（推荐），垃圾vps都能跑起来
 <img src="https://github.com/Howardnm/vtworay/raw/main/images/vmesstcp.jpg" width="16%">
 
 ###### tcp协议，vps网络质量好，扫这个
