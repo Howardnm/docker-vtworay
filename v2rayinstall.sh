@@ -143,7 +143,7 @@ clear
 clear
 				fi
 			rm /etc/v2ray/v2rayN-Core.zip
-			wget -P /etc/v2ray/ https://github.com/Howardnm/vtworay/releases/download/v2rayN/v2rayN-Core.zip
+			wget -P /etc/v2ray/ https://github.com/Howardnm/vtworay/releases/download/v2rayN/v2rayN-Core-4.12.zip
 			sz /etc/v2ray/v2rayN-Core.zip
 			echo "结束"
 			elif [ "${downloadsclient}" = "2" ]; then
@@ -156,7 +156,7 @@ clear
 clear
 				fi
 			rm /etc/v2ray/Shadowsocks.zip
-			wget -P /etc/v2ray/ https://github.com/Howardnm/vtworay/releases/download/v2rayN/Shadowsocks.zip
+			wget -P /etc/v2ray/ https://github.com/Howardnm/vtworay/releases/download/v2rayN/Shadowsocks-4.4.0.185.zip
 			sz /etc/v2ray/Shadowsocks.zip
 			echo "结束"
 			elif [ "${downloadsclient}" = "3" ]; then
@@ -169,7 +169,7 @@ clear
 clear
 				fi
 			rm /etc/v2ray/ShadowsocksR-win.zip
-			wget -P /etc/v2ray/ https://github.com/Howardnm/vtworay/releases/download/v2rayN/ShadowsocksR-win.zip
+			wget -P /etc/v2ray/ https://github.com/Howardnm/vtworay/releases/download/v2rayN/ShadowsocksR-win-4.9.2.zip
 			sz /etc/v2ray/ShadowsocksR-win.zip
 			echo "结束"
 			fi
