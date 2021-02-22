@@ -8,8 +8,10 @@
 wget  https://raw.githubusercontent.com/Howardnm/vtworay/main/v2rayinstall.sh && chmod +x v2rayinstall.sh && ./v2rayinstall.sh
 ```
 ## 二、完成脚本后，就可以订阅了，订阅后，客户端修改ip即可使用
-##### $$ 和 $$r
-<img src="https://github.com/Howardnm/vtworay/raw/main/images/ss.jpg" width="10%">-----------------<img src="https://github.com/Howardnm/vtworay/raw/main/images/ssr.jpg" width="10%">
+##### $$ 和 $$r 点击图片放大
+<img src="https://github.com/Howardnm/vtworay/raw/main/images/ss.jpg" width="10%"><img src="https://github.com/Howardnm/vtworay/raw/main/images/ssr.jpg" width="10%">
+<figcaption>主路由</figcaption><figcaption>主路由</figcaption>
+
 ##### v2ray
 ###### mkcp协议，如果vps网络不稳定，扫这个（推荐）
 <img src="https://github.com/Howardnm/vtworay/raw/main/images/vmesstcp.jpg" width="16%">
