@@ -15,7 +15,7 @@ clear
 	sleep 1
     fi
 clear
-    echo -e "  一键安装v2ray脚本 howard v2.4
+    echo -e "  一键安装v2ray脚本 howard v2.5
 ————————————————————————————————
  ${Green_font_prefix}1.${Font_color_suffix} 安装 v2ray ssr ss
  ${Green_font_prefix}2.${Font_color_suffix} 卸载 v2ray ssr ss
@@ -24,7 +24,7 @@ clear
 ————————————————————————————————"
 read -t 30 -p "输入对应数字【1-4】 :" howard
 if [ "${howard}" = "1" ]; then
-	read -t 30 -p "要安装v2ray ？ y/n :" vtworay
+	read -t 30 -p "要安装v2ray ？ y或n :" vtworay
 	if [ "${vtworay}" = "y" ]; then
 		rm -f /etc/v2ray/*
 		wget -P /etc/v2ray/ https://raw.githubusercontent.com/Howardnm/vtworay/main/config_mkcp_detour.json 
@@ -42,7 +42,7 @@ if [ "${howard}" = "1" ]; then
 clear
 	fi
 	echo "————————————————————————————————"
-	read -t 30 -p "要安装ss和ssr ？ y/n :" ssrss
+	read -t 30 -p "要安装ss和ssr ？ y或n :" ssrss
 	if [ "${ssrss}" = "y" ]; then
 		docker run -d -p 54019:8388 -p 54019:8388/udp --name shadowsocks-libev --restart=always -e SERVER_PORT="8388" -e PASSWORD="hxc123" -e METHOD="aes-128-gcm" -e DNS_ADDRS="8.8.8.8,223.5.5.5,8.8.4.4,114.114.114.114" -e TIMEOUT="3000" shadowsocks/shadowsocks-libev
 		docker run -d -p 54009:8388 -p 54009:8388/udp --name shadowsocksR-libev --restart=always -e SERVER_PORT="8388" -e PASSWORD="hxc123" -e METHOD="aes-128-cfb" -e DNS_ADDRS="8.8.8.8,223.5.5.5,8.8.4.4,114.114.114.114" -e TIMEOUT="3000" shadowsocks/shadowsocks-libev
@@ -63,13 +63,9 @@ ssr://MC4wLjAuMDo1NDAwOTpvcmlnaW46YWVzLTEyOC1jZmI6cGxhaW46YUhoak1USXovP3JlbWFya3
 	fi
 echo -n "订阅后，客户端将ip改为" ; echo $wanip
 echo -e "即可使用，或者到网页扫码订阅：https://github.com/Howardnm/vtworay
-————————————————————————————————
-docker正在运行的容器：
 ————————————————————————————————"
-docker ps
-echo -e "————————————————————————————————"
 elif [ "${howard}" = "2" ]; then
-	read -t 30 -p "要卸载v2ray？ y/n :" vtworaydel
+	read -t 30 -p "要卸载v2ray？ y或n :" vtworaydel
 	if [ "${vtworaydel}" = "y" ]; then
 		docker stop v2ray_mkcp v2ray_tcp 
 		docker rm v2ray_mkcp v2ray_tcp 
@@ -79,7 +75,7 @@ elif [ "${howard}" = "2" ]; then
 		echo "---"
 	fi
 	echo "————————————————————————————————"
-	read -t 30 -p "要卸载ssr和ss？ y/n :" ssrssdel
+	read -t 30 -p "要卸载ssr和ss？ y或n :" ssrssdel
 		if [ "${ssrssdel}" = "y" ]; then
 		docker stop shadowsocks-libev shadowsocksR-libev
 		docker rm shadowsocks-libev shadowsocksR-libev
