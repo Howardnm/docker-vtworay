@@ -16,6 +16,7 @@ wget  https://raw.githubusercontent.com/Howardnm/vtworay/main/v2rayinstall.sh &&
 
 ###### tcp协议，vps网络质量好，扫这个
 <img src="https://github.com/Howardnm/vtworay/raw/main/images/vmessmkcp.jpg" width="16%">
+
 ## 三、其他
 ##### 1、如果脚本运行失败，请先运行下面代码，再重新运行脚本
 ```bash
