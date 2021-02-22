@@ -1,8 +1,13 @@
 # vtworay
-###### 欢迎来到docker v2ray 一键安装脚本，vps首选centOS 7 64bit系统
+###### 欢迎来到docker v2ray 一键安装脚本
 ###### 只需要复制下面代码到ssh，即可运行，1分钟内搭建完成，即可使用
 ###### 方便快捷！！！
-
+##### vps准备
+```bash
+系统：仅适用于centOS，推荐centOS 7 64bit
+内存：推荐512MB，至少256MB
+拥有ipv4
+```
 ## 一、一键docker脚本
 ```bash
 wget  https://raw.githubusercontent.com/Howardnm/vtworay/main/v2rayinstall.sh && chmod +x v2rayinstall.sh && ./v2rayinstall.sh
