@@ -6,6 +6,7 @@ mkdir /etc/v2ray
     if [ $? -eq  0 ]; then
         echo "检查到Docker已安装!"
     else
+clear
     	echo "安装docker环境..."
         curl -sSL https://get.daocloud.io/docker | sh
         systemctl start docker
