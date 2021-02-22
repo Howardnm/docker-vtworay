@@ -101,12 +101,11 @@ elif [ "${howard}" = "3" ]; then
 clear
 	    echo -e "下载方法：
 ————————————————————————————————
-${Green_font_prefix}1.${Font_color_suffix} 自动生成一个网页，在浏览器下载（强烈建议）
-${Green_font_prefix}2.${Font_color_suffix} 直接下载（请用Xshell登录ssh才能运行该选项）
+${Green_font_prefix}1.${Font_color_suffix} 一键搭建网盘，在浏览器下载（强烈建议）
+${Green_font_prefix}2.${Font_color_suffix} 直接下载（请用Xshell、FinalShell登录ssh才能运行该选项）
 ${Green_font_prefix}3.${Font_color_suffix} 退出
 ————————————————————————————————
 在github直接下载客户端：https://github.com/Howardnm/vtworay/releases/tag/v2rayN
-Xshell下载地址：https://download.netsarang.com/67698f21/Xshell-7.0.0056p.exe
 ————————————————————————————————"
 	read -t 30 -p "输入对应数字【1-3】 :" downloadss
 	if [ "${downloadss}" = "1" ]; then
