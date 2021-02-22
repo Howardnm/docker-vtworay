@@ -101,7 +101,7 @@ ${Green_font_prefix}1.${Font_color_suffix} 一键搭建网盘，在浏览器下�
 ${Green_font_prefix}2.${Font_color_suffix} 直接下载（请用Xshell、FinalShell登录ssh才能运行该选项）
 ${Green_font_prefix}3.${Font_color_suffix} 退出
 ————————————————————————————————
-在github直接下载客户端：https://github.com/Howardnm/vtworay/releases/tag/v2rayN
+直接在github下载客户端：https://github.com/Howardnm/vtworay/releases/tag/v2rayN
 ————————————————————————————————"
 	read -t 30 -p "输入对应数字【1-3】 :" downloadss
 	if [ "${downloadss}" = "1" ]; then
