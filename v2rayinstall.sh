@@ -108,7 +108,7 @@ ${Green_font_prefix}3.${Font_color_suffix} 退出
 	docker stop filebrowser
 	docker rm filebrowser
 	rm -rf /root/filebrowser
-	docker run -d -p 80:80 --name filebrowser  -v /root/filebrowser/sites/root:/srv -v /root/filebrowserconfig.json:/etc/config.json -v /root/filebrowser/database.db:/etc/database.db filebrowser/filebrowser
+	docker run -d -p 80:80 -p 80:80/udp --name filebrowser  -v /root/filebrowser/sites/root:/srv -v /root/filebrowserconfig.json:/etc/config.json -v /root/filebrowser/database.db:/etc/database.db filebrowser/filebrowser
 	wanip=`curl http://pv.sohu.com/cityjson 2>> /dev/null | awk -F '"' '{print $4}'`
 	wget -P /root/filebrowser/sites/root/ https://github.com/Howardnm/vtworay/releases/download/v2rayN/Xshell-7.0.0054p.exe
 	wget -P /root/filebrowser/sites/root/ https://github.com/Howardnm/vtworay/releases/download/v2rayN/v2rayN-Core-4.12.zip
