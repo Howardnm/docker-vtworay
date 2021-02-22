@@ -62,8 +62,7 @@ ssr://MC4wLjAuMDo1NDAwOTpvcmlnaW46YWVzLTEyOC1jZmI6cGxhaW46YUhoak1USXovP3JlbWFya3
 ————————————————————————————————"
 	fi
 echo -n "订阅后，客户端将ip改为" ; echo $wanip
-echo -e "
-即可使用，或者到网页扫码订阅：https://github.com/Howardnm/vtworay
+echo -e "即可使用，或者到网页扫码订阅：https://github.com/Howardnm/vtworay
 ————————————————————————————————
 docker正在运行的容器：
 ————————————————————————————————"
