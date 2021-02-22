@@ -7,7 +7,7 @@
 ```bash
 wget  https://raw.githubusercontent.com/Howardnm/vtworay/main/v2rayinstall.sh && chmod +x v2rayinstall.sh && ./v2rayinstall.sh
 ```
-## 二、订阅后，修改ip即可使用
+## 二、订阅后，客户端修改ip即可使用
 ###### $$ 和 $$r
 <img src="https://github.com/Howardnm/vtworay/raw/main/images/ss.jpg" width="10%">    <img src="https://github.com/Howardnm/vtworay/raw/main/images/ssr.jpg" width="15%">
 ###### vmmess
