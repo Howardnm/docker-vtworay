@@ -15,7 +15,7 @@ clear
 	sleep 1
     fi
 clear
-    echo -e "  一键安装v2ray脚本 howard v2.9
+    echo -e "  一键安装v2ray脚本 howard v3.0
 ————————————————————————————————
  ${Green_font_prefix}1.${Font_color_suffix} 安装 v2ray ssr ss
  ${Green_font_prefix}2.${Font_color_suffix} 卸载 v2ray ssr ss
@@ -72,8 +72,8 @@ echo -e "即可使用，或者到网页扫码订阅：https://github.com/Howardn
 elif [ "${howard}" = "2" ]; then
 	read -t 30 -p "要卸载v2ray？ y或n :" vtworaydel
 	if [ "${vtworaydel}" = "y" ]; then
-		docker stop v2ray_mkcp v2ray_tcp 
-		docker rm v2ray_mkcp v2ray_tcp 
+		docker stop v2ray_mkcp v2ray_tcp v2ray_tcp_http
+		docker rm v2ray_mkcp v2ray_tcp v2ray_tcp_http
 		rm -f /etc/v2ray/*
 		echo "已卸载v2ray"
 	elif [ "${vtworaydel}" = "n" ]; then
