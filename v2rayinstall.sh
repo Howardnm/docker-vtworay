@@ -15,7 +15,7 @@ clear
 	sleep 1
     fi
 clear
-    echo -e "  一键安装v2ray脚本 howard v3.2
+    echo -e "  一键安装v2ray脚本 howard v3.3
 ————————————————————————————————
  ${Green_font_prefix}1.${Font_color_suffix} 安装 v2ray ssr ss
  ${Green_font_prefix}2.${Font_color_suffix} 卸载 v2ray ssr ss
@@ -124,6 +124,7 @@ ${Green_font_prefix}5.${Font_color_suffix} 退出
 	elif [ "${QRcode}" = "4" ]; then
 	echo -n 'ssr://MC4wLjAuMDo1NDAwOTpvcmlnaW46YWVzLTEyOC1jZmI6cGxhaW46YUhoak1USXovP3JlbWFya3M9YzNOeSZwcm90b3BhcmFtPSZvYmZzcGFyYW09' | qrencode -o - -t UTF8
 	fi
+wanip=`curl http://pv.sohu.com/cityjson 2>> /dev/null | awk -F '"' '{print $4}'`
 echo -n "扫码后，将ip改为" ; echo $wanip
 echo "————————————脚本已结束————————————————"
 elif [ "${howard}" = "4" ]; then
