@@ -19,8 +19,9 @@ clear
 ————————————————————————————————
  ${Green_font_prefix}1.${Font_color_suffix} 安装 v2ray ssr ss
  ${Green_font_prefix}2.${Font_color_suffix} 卸载 v2ray ssr ss
- ${Green_font_prefix}3.${Font_color_suffix} 下载客户端
- ${Green_font_prefix}4.${Font_color_suffix} 退出
+ ${Green_font_prefix}3.${Font_color_suffix} 显示 v2ray ssr ss二维码
+ ${Green_font_prefix}4.${Font_color_suffix} 下载客户端
+ ${Green_font_prefix}5.${Font_color_suffix} 退出
 ————————————————————————————————"
 read -t 30 -p "输入对应数字【1-4】 :" howard
 if [ "${howard}" = "1" ]; then
@@ -69,34 +70,6 @@ echo "————————————————————————�
 echo -n "订阅后，客户端将ip改为" ; echo $wanip
 echo -e "即可使用，或者到网页扫码订阅：https://github.com/Howardnm/docker-vtworay
 ————————————————————————————————"
-read -t 30 -p "需要显示二维码吗？ y/n :" QRwait
-if [ "${QRwait}" = "y" ]; then
-	qrencode --help
-	if [ $? -eq  0 ]; then
-	echo "检查到qrencode已安装!"
-	else
-	yum -y install qrencode
-	fi
-clear
-	    echo -e "—————————选择二维码—————————————
-${Green_font_prefix}1.${Font_color_suffix} v2ray mkcp
-${Green_font_prefix}2.${Font_color_suffix} v2ray tcp
-${Green_font_prefix}3.${Font_color_suffix} ss
-${Green_font_prefix}4.${Font_color_suffix} ssr
-${Green_font_prefix}5.${Font_color_suffix} 退出
-————————————————————————————————"
-	read -t 30 -p "输入对应数字【1-10】 :" QRcode
-	if [ "${QRcode}" = "1" ]; then
-	echo -n 'vmess://ew0KICAidiI6ICIyIiwNCiAgInBzIjogInYycmF5LWttY3AiLA0KICAiYWRkIjogIjAuMC4wLjAiLA0KICAicG9ydCI6ICI1MjAwMSIsDQogICJpZCI6ICI5YWM5YTBiMy1lODBiLTQ2NmItODEzYS03MzhjNmNmZDQ2Y2QiLA0KICAiYWlkIjogIjIwIiwNCiAgIm5ldCI6ICJrY3AiLA0KICAidHlwZSI6ICJub25lIiwNCiAgImhvc3QiOiAiIiwNCiAgInBhdGgiOiAiIiwNCiAgInRscyI6ICIiLA0KICAic25pIjogIiINCn0=' | qrencode -o - -t UTF8
-	elif [ "${QRcode}" = "2" ]; then
-	echo -n 'vmess://ew0KICAidiI6ICIyIiwNCiAgInBzIjogInYycmF5LXRjcCIsDQogICJhZGQiOiAiMC4wLjAuMCIsDQogICJwb3J0IjogIjUxMDAxIiwNCiAgImlkIjogIjlhYzlhMGIzLWU4MGItNDY2Yi04MTNhLTczOGM2Y2ZkNDZjZCIsDQogICJhaWQiOiAiMjAiLA0KICAibmV0IjogInRjcCIsDQogICJ0eXBlIjogIm5vbmUiLA0KICAiaG9zdCI6ICIiLA0KICAicGF0aCI6ICIiLA0KICAidGxzIjogIiIsDQogICJzbmkiOiAiIg0KfQ==' | qrencode -o - -t UTF8
-	elif [ "${QRcode}" = "3" ]; then
-	echo -n 'ss://YWVzLTEyOC1nY206aHhjMTIzQDAuMC4wLjA6NTQwMTk#ss' | qrencode -o - -t UTF8
-	elif [ "${QRcode}" = "4" ]; then
-	echo -n 'ssr://MC4wLjAuMDo1NDAwOTpvcmlnaW46YWVzLTEyOC1jZmI6cGxhaW46YUhoak1USXovP3JlbWFya3M9YzNOeSZwcm90b3BhcmFtPSZvYmZzcGFyYW09' | qrencode -o - -t UTF8
-	fi
-fi
-echo -n "扫码后，将ip改为" ; echo $wanip
 elif [ "${howard}" = "2" ]; then
 	read -t 30 -p "要卸载v2ray？ y或n :" vtworaydel
 	if [ "${vtworaydel}" = "y" ]; then
@@ -127,6 +100,34 @@ docker正在运行的容器：
 docker ps
 echo -e "————————————————————————————————"
 elif [ "${howard}" = "3" ]; then
+	qrencode --help
+	if [ $? -eq  0 ]; then
+	echo "检查到qrencode已安装!"
+	else
+	yum -y install qrencode
+	fi
+clear
+	    echo -e "—————————选择二维码—————————————
+${Green_font_prefix}1.${Font_color_suffix} v2ray mkcp
+${Green_font_prefix}2.${Font_color_suffix} v2ray tcp
+${Green_font_prefix}3.${Font_color_suffix} ss
+${Green_font_prefix}4.${Font_color_suffix} ssr
+${Green_font_prefix}5.${Font_color_suffix} 退出
+————————————————————————————————"
+	read -t 30 -p "输入对应数字【1-10】 :" QRcode
+	if [ "${QRcode}" = "1" ]; then
+	echo -n 'vmess://ew0KICAidiI6ICIyIiwNCiAgInBzIjogInYycmF5LWttY3AiLA0KICAiYWRkIjogIjAuMC4wLjAiLA0KICAicG9ydCI6ICI1MjAwMSIsDQogICJpZCI6ICI5YWM5YTBiMy1lODBiLTQ2NmItODEzYS03MzhjNmNmZDQ2Y2QiLA0KICAiYWlkIjogIjIwIiwNCiAgIm5ldCI6ICJrY3AiLA0KICAidHlwZSI6ICJub25lIiwNCiAgImhvc3QiOiAiIiwNCiAgInBhdGgiOiAiIiwNCiAgInRscyI6ICIiLA0KICAic25pIjogIiINCn0=' | qrencode -o - -t UTF8
+	elif [ "${QRcode}" = "2" ]; then
+	echo -n 'vmess://ew0KICAidiI6ICIyIiwNCiAgInBzIjogInYycmF5LXRjcCIsDQogICJhZGQiOiAiMC4wLjAuMCIsDQogICJwb3J0IjogIjUxMDAxIiwNCiAgImlkIjogIjlhYzlhMGIzLWU4MGItNDY2Yi04MTNhLTczOGM2Y2ZkNDZjZCIsDQogICJhaWQiOiAiMjAiLA0KICAibmV0IjogInRjcCIsDQogICJ0eXBlIjogIm5vbmUiLA0KICAiaG9zdCI6ICIiLA0KICAicGF0aCI6ICIiLA0KICAidGxzIjogIiIsDQogICJzbmkiOiAiIg0KfQ==' | qrencode -o - -t UTF8
+	elif [ "${QRcode}" = "3" ]; then
+	echo -n 'ss://YWVzLTEyOC1nY206aHhjMTIzQDAuMC4wLjA6NTQwMTk#ss' | qrencode -o - -t UTF8
+	elif [ "${QRcode}" = "4" ]; then
+	echo -n 'ssr://MC4wLjAuMDo1NDAwOTpvcmlnaW46YWVzLTEyOC1jZmI6cGxhaW46YUhoak1USXovP3JlbWFya3M9YzNOeSZwcm90b3BhcmFtPSZvYmZzcGFyYW09' | qrencode -o - -t UTF8
+	fi
+fi
+echo -n "扫码后，将ip改为" ; echo $wanip
+echo "————————————脚本已结束————————————————"
+elif [ "${howard}" = "4" ]; then
 clear
 	    echo -e "下载方法：
 ————————————————————————————————
