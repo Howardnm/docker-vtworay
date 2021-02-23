@@ -92,7 +92,7 @@ sleep 1
 clear
 echo -e "
 ————————————————————————————————
-goodbye friends！！！
+脚本已结束，再见！！
 ————————————————————————————————
 docker正在运行的容器：
 ————————————————————————————————"
@@ -177,6 +177,8 @@ clear
 			wget -P /etc/v2ray/ https://github.com/Howardnm/vtworay/releases/download/v2rayN/ShadowsocksR-win-4.9.2.zip
 			sz /etc/v2ray/ShadowsocksR-win-4.9.2.zip
 			echo "结束"
+			else
+			echo "脚本已结束，再见！！"
 			fi
 
 	fi
@@ -184,7 +186,7 @@ else
 clear
 	    echo -e "
 ————————————————————————————————
-goodbye friends！！！
+脚本已结束，再见！！
 ————————————————————————————————
 docker正在运行的容器：
 ————————————————————————————————"
