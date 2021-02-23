@@ -4,7 +4,6 @@
         "port": 52001 , // 服务器监听端口
         "protocol": "vmess",    // 主传入协议
         "settings": {
-          "udp": true ,
           "clients": [
             {
               "id": "9ac9a0b3-e80b-466b-813a-738c6cfd46cd",  // 用户 ID，客户端与服务器必须相同
