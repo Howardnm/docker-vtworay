@@ -63,7 +63,7 @@ vmess://ew0KICAidiI6ICIyIiwNCiAgInBzIjogInYycmF5LXRjcCIsDQogICJhZGQiOiAiMC4wLjAu
 	if [ "${ssrss}" = "y" ]; then
 	echo -e "————————ss——ssr—————————————————
 ss://YWVzLTEyOC1nY206aHhjMTIzQDAuMC4wLjA6NTQwMTk#ss
-ssr://MC4wLjAuMDo1NDAwOTpvcmlnaW46YWVzLTEyOC1jZmI6cGxhaW46YUhoak1USXovP3JlbWFya3M9YzNOeSZwcm90b3BhcmFtPSZvYmZzcGFyYW09
+ssr://MC4wLjAuMDo1NDAwOTpvcmlnaW46YWVzLTEyOC1jZmI6cGxhaW46YUhoak1USXovP3JlbWFya3M9YzNOeSZwcm90b3BhcmFtPSZvYmZzcGFyYW09"
 	fi
 echo "————————————————————————————————"
 echo -n "订阅后，客户端将ip改为" ; echo $wanip
