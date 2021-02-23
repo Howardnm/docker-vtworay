@@ -15,7 +15,7 @@ clear
 	sleep 1
     fi
 clear
-    echo -e "  一键安装v2ray脚本 howard v3.1
+    echo -e "  一键安装v2ray脚本 howard v3.2
 ————————————————————————————————
  ${Green_font_prefix}1.${Font_color_suffix} 安装 v2ray ssr ss
  ${Green_font_prefix}2.${Font_color_suffix} 卸载 v2ray ssr ss
@@ -23,7 +23,7 @@ clear
  ${Green_font_prefix}4.${Font_color_suffix} 下载客户端
  ${Green_font_prefix}5.${Font_color_suffix} 退出
 ————————————————————————————————"
-read -t 30 -p "输入对应数字【1-4】 :" howard
+read -t 30 -p "输入对应数字【1-5】 :" howard
 if [ "${howard}" = "1" ]; then
 	read -t 30 -p "要安装v2ray ？ y或n :" vtworay
 	if [ "${vtworay}" = "y" ]; then
@@ -114,7 +114,7 @@ ${Green_font_prefix}3.${Font_color_suffix} ss
 ${Green_font_prefix}4.${Font_color_suffix} ssr
 ${Green_font_prefix}5.${Font_color_suffix} 退出
 ————————————————————————————————"
-	read -t 30 -p "输入对应数字【1-10】 :" QRcode
+	read -t 30 -p "输入对应数字【1-5】 :" QRcode
 	if [ "${QRcode}" = "1" ]; then
 	echo -n 'vmess://ew0KICAidiI6ICIyIiwNCiAgInBzIjogInYycmF5LWttY3AiLA0KICAiYWRkIjogIjAuMC4wLjAiLA0KICAicG9ydCI6ICI1MjAwMSIsDQogICJpZCI6ICI5YWM5YTBiMy1lODBiLTQ2NmItODEzYS03MzhjNmNmZDQ2Y2QiLA0KICAiYWlkIjogIjIwIiwNCiAgIm5ldCI6ICJrY3AiLA0KICAidHlwZSI6ICJub25lIiwNCiAgImhvc3QiOiAiIiwNCiAgInBhdGgiOiAiIiwNCiAgInRscyI6ICIiLA0KICAic25pIjogIiINCn0=' | qrencode -o - -t UTF8
 	elif [ "${QRcode}" = "2" ]; then
