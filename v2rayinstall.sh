@@ -15,7 +15,7 @@ clear
 	sleep 1
     fi
 clear
-    echo -e "  一键安装v2ray脚本 howard v2.8
+    echo -e "  一键安装v2ray脚本 howard v2.9
 ————————————————————————————————
  ${Green_font_prefix}1.${Font_color_suffix} 安装 v2ray ssr ss
  ${Green_font_prefix}2.${Font_color_suffix} 卸载 v2ray ssr ss
@@ -30,15 +30,20 @@ if [ "${howard}" = "1" ]; then
 		wget -P /etc/v2ray/ https://raw.githubusercontent.com/Howardnm/vtworay/main/config_mkcp_detour.json 
 		wget -P /etc/v2ray/ https://raw.githubusercontent.com/Howardnm/vtworay/main/config_tcp.json 
 		wget -P /etc/v2ray/ https://raw.githubusercontent.com/Howardnm/vtworay/main/config_mkcp.json
+		wget -P /etc/v2ray/ https://raw.githubusercontent.com/Howardnm/vtworay/main/config_tcp_http.json
 		awk '/port/' /etc/v2ray/config_tcp.json>/etc/v2ray/config_tcp_port.json
 		awk '{print $2}' /etc/v2ray/config_tcp_port.json>/etc/v2ray/config_tcp_port2.json
 		tcpport=$(cat /etc/v2ray/config_tcp_port2.json)
 		awk '/port/' /etc/v2ray/config_mkcp.json>/etc/v2ray/config_mkcp_port.json
 		awk '{print $2}' /etc/v2ray/config_mkcp_port.json>/etc/v2ray/config_mkcp_port2.json
 		mkcpport=$(cat /etc/v2ray/config_mkcp_port2.json)
-		rm /etc/v2ray/config_tcp_port.json /etc/v2ray/config_tcp_port2.json /etc/v2ray/config_mkcp_port.json /etc/v2ray/config_mkcp_port2.json
+		awk '/port/' /etc/v2ray/config_tcp_http.json>/etc/v2ray/config_tcp_http_port.json
+		awk '{print $2}' /etc/v2ray/config_tcp_http_port.json>/etc/v2ray/config_tcp_http_port2.json
+		tcphttpport=$(cat /etc/v2ray/config_tcp_http_port2.json)
+		rm /etc/v2ray/config_tcp_port.json /etc/v2ray/config_tcp_port2.json /etc/v2ray/config_mkcp_port.json /etc/v2ray/config_mkcp_port2.json /etc/v2ray/config_tcp_http_port.json /etc/v2ray/config_tcp_http_port2.json
 		docker run -d --name v2ray_mkcp --restart=always -v /etc/v2ray:/etc/v2ray -p ${mkcpport}:${mkcpport} -p ${mkcpport}:${mkcpport}/udp v2fly/v2fly-core  v2ray -config=/etc/v2ray/config_mkcp.json
 		docker run -d --name v2ray_tcp --restart=always -v /etc/v2ray:/etc/v2ray -p ${tcpport}:${tcpport} -p ${tcpport}:${tcpport}/udp v2fly/v2fly-core  v2ray -config=/etc/v2ray/config_tcp.json
+		docker run -d --name v2ray_tcp_http --restart=always -v /etc/v2ray:/etc/v2ray -p ${tcphttpport}:${tcphttpport} -p ${tcphttpport}:${tcphttpport}/udp v2fly/v2fly-core  v2ray -config=/etc/v2ray/config_tcp_http.json
 clear
 	fi
 	echo "————————————————————————————————"
@@ -108,7 +113,7 @@ ${Green_font_prefix}3.${Font_color_suffix} 退出
 	docker stop filebrowser
 	docker rm filebrowser
 	rm -rf /root/filebrowser
-	docker run -d -p 80:80 -p 80:80/udp --name filebrowser  -v /root/filebrowser/sites/root:/srv -v /root/filebrowserconfig.json:/etc/config.json -v /root/filebrowser/database.db:/etc/database.db filebrowser/filebrowser
+	docker run -d -p 8081:80 -p 8081:80/udp --name filebrowser  -v /root/filebrowser/sites/root:/srv -v /root/filebrowserconfig.json:/etc/config.json -v /root/filebrowser/database.db:/etc/database.db filebrowser/filebrowser
 	wanip=`curl http://pv.sohu.com/cityjson 2>> /dev/null | awk -F '"' '{print $4}'`
 	wget -P /root/filebrowser/sites/root/ https://github.com/Howardnm/vtworay/releases/download/v2rayN/Xshell-7.0.0054p.exe
 	wget -P /root/filebrowser/sites/root/ https://github.com/Howardnm/vtworay/releases/download/v2rayN/v2rayN-Core-4.12.zip
@@ -116,7 +121,7 @@ ${Green_font_prefix}3.${Font_color_suffix} 退出
 	wget -P /root/filebrowser/sites/root/ https://github.com/Howardnm/vtworay/releases/download/v2rayN/ShadowsocksR-win-4.9.2.zip
 	clear
 	echo "————————————————————————————————"
-	echo -n "请在浏览器打开 http://" ; echo $wanip
+	echo -n "请在浏览器打开 http://" ; echo -n $wanip ; echo ":8081"
 	echo " "
 	echo "账号：admin 密码：admin"
 	echo "————————————————————————————————"
