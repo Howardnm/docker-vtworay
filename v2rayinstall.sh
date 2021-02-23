@@ -15,7 +15,7 @@ clear
 	sleep 1
     fi
 clear
-    echo -e "  一键安装v2ray脚本 howard v3.1
+    echo -e "  一键安装v2ray脚本 howard v3.0
 ————————————————————————————————
  ${Green_font_prefix}1.${Font_color_suffix} 安装 v2ray ssr ss
  ${Green_font_prefix}2.${Font_color_suffix} 卸载 v2ray ssr ss
@@ -30,20 +30,20 @@ if [ "${howard}" = "1" ]; then
 		wget -P /etc/v2ray/ https://raw.githubusercontent.com/Howardnm/vtworay/main/config_mkcp_detour.json 
 		wget -P /etc/v2ray/ https://raw.githubusercontent.com/Howardnm/vtworay/main/config_tcp.json 
 		wget -P /etc/v2ray/ https://raw.githubusercontent.com/Howardnm/vtworay/main/config_mkcp.json
-		wget -P /etc/v2ray/ https://raw.githubusercontent.com/Howardnm/vtworay/main/config_tcp_http.json
+		#wget -P /etc/v2ray/ https://raw.githubusercontent.com/Howardnm/vtworay/main/config_tcp_http.json
 		awk '/port/' /etc/v2ray/config_tcp.json>/etc/v2ray/config_tcp_port.json
 		awk '{print $2}' /etc/v2ray/config_tcp_port.json>/etc/v2ray/config_tcp_port2.json
 		tcpport=$(cat /etc/v2ray/config_tcp_port2.json)
 		awk '/port/' /etc/v2ray/config_mkcp.json>/etc/v2ray/config_mkcp_port.json
 		awk '{print $2}' /etc/v2ray/config_mkcp_port.json>/etc/v2ray/config_mkcp_port2.json
 		mkcpport=$(cat /etc/v2ray/config_mkcp_port2.json)
-		awk '/port/' /etc/v2ray/config_tcp_http.json>/etc/v2ray/config_tcp_http_port.json
-		awk '{print $2}' /etc/v2ray/config_tcp_http_port.json>/etc/v2ray/config_tcp_http_port2.json
-		tcphttpport=$(cat /etc/v2ray/config_tcp_http_port2.json)
-		rm /etc/v2ray/config_tcp_port.json /etc/v2ray/config_tcp_port2.json /etc/v2ray/config_mkcp_port.json /etc/v2ray/config_mkcp_port2.json /etc/v2ray/config_tcp_http_port.json /etc/v2ray/config_tcp_http_port2.json
+		#awk '/port/' /etc/v2ray/config_tcp_http.json>/etc/v2ray/config_tcp_http_port.json
+		#awk '{print $2}' /etc/v2ray/config_tcp_http_port.json>/etc/v2ray/config_tcp_http_port2.json
+		#tcphttpport=$(cat /etc/v2ray/config_tcp_http_port2.json)
+		rm /etc/v2ray/config_tcp_port.json /etc/v2ray/config_tcp_port2.json /etc/v2ray/config_mkcp_port.json /etc/v2ray/config_mkcp_port2.json #/etc/v2ray/config_tcp_http_port.json /etc/v2ray/config_tcp_http_port2.json
 		docker run -d --name v2ray_mkcp --restart=always -v /etc/v2ray:/etc/v2ray -p ${mkcpport}:${mkcpport} -p ${mkcpport}:${mkcpport}/udp v2fly/v2fly-core  v2ray -config=/etc/v2ray/config_mkcp.json
 		docker run -d --name v2ray_tcp --restart=always -v /etc/v2ray:/etc/v2ray -p ${tcpport}:${tcpport} -p ${tcpport}:${tcpport}/udp v2fly/v2fly-core  v2ray -config=/etc/v2ray/config_tcp.json
-		docker run -d --name v2ray_tcp_http --restart=always -v /etc/v2ray:/etc/v2ray -p ${tcphttpport}:${tcphttpport} -p ${tcphttpport}:${tcphttpport}/udp v2fly/v2fly-core  v2ray -config=/etc/v2ray/config_tcp_http.json
+		#docker run -d --name v2ray_tcp_http --restart=always -v /etc/v2ray:/etc/v2ray -p ${tcphttpport}:${tcphttpport} -p ${tcphttpport}:${tcphttpport}/udp v2fly/v2fly-core  v2ray -config=/etc/v2ray/config_tcp_http.json
 clear
 	fi
 	echo "————————————————————————————————"
@@ -72,8 +72,8 @@ echo -e "即可使用，或者到网页扫码订阅：https://github.com/Howardn
 elif [ "${howard}" = "2" ]; then
 	read -t 30 -p "要卸载v2ray？ y或n :" vtworaydel
 	if [ "${vtworaydel}" = "y" ]; then
-		docker stop v2ray_mkcp v2ray_tcp v2ray_tcp_http
-		docker rm v2ray_mkcp v2ray_tcp v2ray_tcp_http
+		docker stop v2ray_mkcp v2ray_tcp #v2ray_tcp_http
+		docker rm v2ray_mkcp v2ray_tcp #v2ray_tcp_http
 		rm -f /etc/v2ray/*
 		echo "已卸载v2ray"
 	elif [ "${vtworaydel}" = "n" ]; then
