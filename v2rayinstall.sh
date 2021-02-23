@@ -89,7 +89,6 @@ elif [ "${howard}" = "2" ]; then
 	elif [ "${ssrssdel}" = "n" ]; then
 		echo "---"
 	fi
-sleep 1
 clear
 echo -e "
 ————————————————————————————————
