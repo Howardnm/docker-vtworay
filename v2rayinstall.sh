@@ -14,6 +14,12 @@ clear
         echo -e "安装docker环境...安装完成!"
 	sleep 1
     fi
+	qrencode --help
+	if [ $? -eq  0 ]; then
+	echo "检查到qrencode已安装!"
+	else
+	yum -y install qrencode
+	fi
 clear
     echo -e "  一键安装v2ray脚本 howard v3.0
 ————————————————————————————————
