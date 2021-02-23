@@ -127,8 +127,7 @@ ${Green_font_prefix}3.${Font_color_suffix} 退出
 	echo "————————————————————————————————"
 	echo "在网页进行下载客户端"
 	echo "————————————————————————————————"
-	fi
-	if [ "${downloadss}" = "2" ]; then
+	elif [ "${downloadss}" = "2" ]; then
 clear
 	    echo -e "一键下载客户端
 ————————————————————————————————
@@ -177,10 +176,10 @@ clear
 			wget -P /etc/v2ray/ https://github.com/Howardnm/vtworay/releases/download/v2rayN/ShadowsocksR-win-4.9.2.zip
 			sz /etc/v2ray/ShadowsocksR-win-4.9.2.zip
 			echo "结束"
-			else
-			echo "脚本已结束，再见！！"
 			fi
-
+	else
+clear
+	echo "脚本已结束，再见！！"
 	fi
 else
 clear
