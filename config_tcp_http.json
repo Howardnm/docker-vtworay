@@ -9,6 +9,7 @@
       "port": 80 , //推荐80端口，更好地迷惑防火墙（好吧实际上并没有什么卵用
       "protocol": "vmess",
       "settings": {
+      "udp": true ,
         "clients": [
           {
             "id": "b831381d-6324-4d53-ad4f-8cda48b30811",
