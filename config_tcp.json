@@ -8,7 +8,8 @@
           "clients": [
             {
               "id": "9ac9a0b3-e80b-466b-813a-738c6cfd46cd",  // 用户 ID，客户端与服务器必须相同
-              "alterId": 20 // 伪装值，1-100，值越大cpu能耗越大，0为关闭
+              "alterId": 20, // 伪装值，1-100，值越大cpu能耗越大，0为关闭
+              "security": "auto"
             }
           ]
         }
