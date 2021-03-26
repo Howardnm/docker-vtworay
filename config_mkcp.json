@@ -20,7 +20,7 @@
               "readBufferSize": 10, // 读取缓存区大小，一般3MB
               "writeBufferSize": 10, // 写入缓存区大小，MB，网络环境极差可增加缓存
                 "header": {
-                "type": "none" // none不伪装，srtp 视频通话，utp BT下载， echat-video 微信通话，dtls DTLS数据包，wireguard WireGuard 数据包
+                "type": "utp" // none不伪装，srtp 视频通话，utp BT下载， echat-video 微信通话，dtls DTLS数据包，wireguard WireGuard 数据包
               }
             }
           }
