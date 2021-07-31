@@ -5,53 +5,69 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-  - {name: howardv2ray, type: vmess, server: 139.180.195.163, port: 51001, uuid: 9ac9a0b3-e80b-466b-813a-738c6cfd46cd, alterId: 20, cipher: auto, network: tcp}
+  - {name: v2ray-tcp, server: 0.0.0.0, port: 51001, type: vmess, uuid: 9ac9a0b3-e80b-466b-813a-738c6cfd46cd, alterId: 20, cipher: auto, tls: false}
+  - {name: ss, server: 0.0.0.0, port: 54019, type: ss, cipher: aes-128-gcm, password: hxc123}
+  - {name: ssr, server: 0.0.0.0, port: 54009, type: ss, cipher: aes-128-cfb, password: hxc123}
 proxy-groups:
   - name: 🚀 节点选择
     type: select
     proxies:
       - ♻️ 自动选择
       - DIRECT
-      - howardv2ray
+      - v2ray-tcp
+      - ss
+      - ssr
   - name: ♻️ 自动选择
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
     proxies:
-      - howardv2ray
+      - v2ray-tcp
+      - ss
+      - ssr
   - name: 🌍 国外媒体
     type: select
     proxies:
       - 🚀 节点选择
       - ♻️ 自动选择
       - 🎯 全球直连
-      - howardv2ray
+      - v2ray-tcp
+      - ss
+      - ssr
   - name: 📲 电报信息
     type: select
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
-      - howardv2ray
+      - v2ray-tcp
+      - ss
+      - ssr
   - name: Ⓜ️ 微软服务
     type: select
     proxies:
       - 🎯 全球直连
       - 🚀 节点选择
-      - howardv2ray
+      - v2ray-tcp
+      - ss
+      - ssr
   - name: 🍎 苹果服务
     type: select
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
-      - howardv2ray
+      - v2ray-tcp
+      - ss
+      - ssr
   - name: 📢 谷歌FCM
     type: select
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
       - ♻️ 自动选择
-      - howardv2ray
+      - v2ray-tcp
+      - ss
+      - ssr
   - name: 🎯 全球直连
     type: select
     proxies:
@@ -74,7 +90,9 @@ proxy-groups:
       - 🚀 节点选择
       - 🎯 全球直连
       - ♻️ 自动选择
-      - howardv2ray
+      - v2ray-tcp
+      - ss
+      - ssr
 rules:
  - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
  - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
@@ -2593,10 +2611,7 @@ rules:
  - DOMAIN-SUFFIX,smartmailcloud.com,🚀 节点选择
  - DOMAIN-SUFFIX,fanatical.com,🚀 节点选择
  - DOMAIN-SUFFIX,humblebundle.com,🚀 节点选择
- - DOMAIN-SUFFIX,steam-chat.com,🚀 节点选择
  - DOMAIN-SUFFIX,steamcommunity.com,🚀 节点选择
- - DOMAIN-SUFFIX,steampowered.com,🚀 节点选择
- - DOMAIN-SUFFIX,steamstatic.com,🚀 节点选择
  - DOMAIN-SUFFIX,tap.io,🚀 节点选择
  - DOMAIN-SUFFIX,taptap.tw,🚀 节点选择
  - DOMAIN-SUFFIX,twitch.tv,🚀 节点选择
@@ -3473,3 +3488,4 @@ rules:
  - IP-CIDR,101.199.196.0/22,🎯 全球直连,no-resolve
  - GEOIP,CN,🎯 全球直连
  - MATCH,🐟 漏网之鱼
+
