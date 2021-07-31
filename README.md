@@ -21,7 +21,7 @@ https://raw.githubusercontent.com/Howardnm/docker-vtworay/main/clash%E8%AE%A2%E9
 <img src="https://github.com/Howardnm/vtworay/raw/main/images/ss.jpg" width="10%"><img src="https://github.com/Howardnm/vtworay/raw/main/images/ssr.jpg" width="10%">
 
 ##### v2ray  （点击图片放大）
-###### mkcp协议，如果vps网络不稳定，扫这个（推荐），垃圾vps都能跑起来
+###### mkcp协议，如果vps网络不稳定，扫这个，垃圾vps都能跑起来
 <img src="https://github.com/Howardnm/vtworay/raw/main/images/vmesstcp.jpg" width="16%">
 
 ###### tcp协议，vps网络质量好，扫这个
