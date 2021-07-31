@@ -17,6 +17,8 @@ wget  https://raw.githubusercontent.com/Howardnm/vtworay/main/v2rayinstall.sh &&
 ```bash
 https://raw.githubusercontent.com/Howardnm/docker-vtworay/main/clash%E8%AE%A2%E9%98%85v2ray.yaml
 ```
+##### 想扫码请访问：
+https://github.com/Howardnm/docker-vtworay/blob/main/images/vr%20code.md
 ## 三、其他
 ##### 1、如果脚本运行失败，请先运行下面代码，再重新运行脚本
 ```bash
