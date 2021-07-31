@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-  - {name: v2ray-tcp, server: 139.180.195.163, port: 51001, type: vmess, uuid: 9ac9a0b3-e80b-466b-813a-738c6cfd46cd, alterId: 20, cipher: auto, tls: false}
+  - {name: v2ray-tcp, server: 139.180.195.163, port: 51001, type: vmess, uuid: 9ac9a0b3-e80b-466b-813a-738c6cfd46cd, alterId: 20, cipher: auto}
   - {name: ss, server: 139.180.195.163, port: 54019, type: ss, cipher: aes-128-gcm, password: hxc123}
   - {name: ssr, server: 139.180.195.163, port: 54009, type: ss, cipher: aes-128-cfb, password: hxc123}
 proxy-groups:
