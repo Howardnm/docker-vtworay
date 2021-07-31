@@ -13,6 +13,10 @@
 wget  https://raw.githubusercontent.com/Howardnm/vtworay/main/v2rayinstall.sh && chmod +x v2rayinstall.sh && ./v2rayinstall.sh
 ```
 ## 二、完成脚本后，就可以订阅了，订阅后，客户端修改ip即可使用
+##### clash直接订阅
+```bash
+https://raw.githubusercontent.com/Howardnm/docker-vtworay/main/clash%E8%AE%A2%E9%98%85v2ray.yaml
+```
 ##### ss 和 ssr  （点击图片放大）
 <img src="https://github.com/Howardnm/vtworay/raw/main/images/ss.jpg" width="10%"><img src="https://github.com/Howardnm/vtworay/raw/main/images/ssr.jpg" width="10%">
 
