@@ -36,7 +36,7 @@ yum -y install curl
 ##### 2、安装bbr（可选）
 bbr，建议在centos 7运行，看文字输入数字，步骤：1、安装bbr魔改版，2、优化配置，3、重启后启动bbr魔改版
 ```bash
-wget -N --no-check-certificate "https://raw.githubusercontent.com/chiakge/Linux-NetSpeed/master/tcp.sh" && chmod +x tcp.sh && ./tcp.sh
+wget -N --no-check-certificate "https://raw.githubusercontent.com/Howardnm/Linux-NetSpeed/master/tcp.sh" && chmod +x tcp.sh && ./tcp.sh
 ```
 ##### 3、docker应用软件一键脚本（可选）
 ```bash
