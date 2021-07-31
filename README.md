@@ -20,7 +20,7 @@ https://raw.githubusercontent.com/Howardnm/docker-vtworay/main/clash%E8%AE%A2%E9
 ##### 想扫码请访问：
 https://github.com/Howardnm/docker-vtworay/blob/main/images/vr%20code.md
 ## 三、其他
-##### 1、安装bbr（可选）
+##### 1、安装bbr（可选，推荐安装bbr魔改版）
 bbr，建议在centos 7运行，看文字输入数字，步骤：1、安装bbr魔改版，2、优化配置，3、重启后启动bbr魔改版
 ```bash
 wget -N --no-check-certificate "https://raw.githubusercontent.com/Howardnm/Linux-NetSpeed/master/tcp.sh" && chmod +x tcp.sh && ./tcp.sh
