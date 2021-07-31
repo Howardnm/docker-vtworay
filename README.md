@@ -13,7 +13,7 @@
 wget  https://raw.githubusercontent.com/Howardnm/vtworay/main/v2rayinstall.sh && chmod +x v2rayinstall.sh && ./v2rayinstall.sh
 ```
 ## 二、完成脚本后，就可以订阅了，订阅后，客户端修改ip即可使用
-##### clash直接订阅
+##### clash直接订阅，需打开yaml文件修改ip
 ```bash
 https://raw.githubusercontent.com/Howardnm/docker-vtworay/main/clash%E8%AE%A2%E9%98%85v2ray.yaml
 ```
