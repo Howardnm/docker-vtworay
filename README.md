@@ -17,16 +17,6 @@ wget  https://raw.githubusercontent.com/Howardnm/vtworay/main/v2rayinstall.sh &&
 ```bash
 https://raw.githubusercontent.com/Howardnm/docker-vtworay/main/clash%E8%AE%A2%E9%98%85v2ray.yaml
 ```
-##### ss 和 ssr  （点击图片放大）
-<img src="https://github.com/Howardnm/vtworay/raw/main/images/ss.jpg" width="10%"><img src="https://github.com/Howardnm/vtworay/raw/main/images/ssr.jpg" width="10%">
-
-##### v2ray  （点击图片放大）
-###### mkcp协议，如果vps网络不稳定，扫这个，垃圾vps都能跑起来
-<img src="https://github.com/Howardnm/vtworay/raw/main/images/vmesstcp.jpg" width="16%">
-
-###### tcp协议，vps网络质量好，扫这个
-<img src="https://github.com/Howardnm/vtworay/raw/main/images/vmessmkcp.jpg" width="16%">
-
 ## 三、其他
 ##### 1、如果脚本运行失败，请先运行下面代码，再重新运行脚本
 ```bash
