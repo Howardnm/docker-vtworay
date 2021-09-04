@@ -18,5 +18,5 @@ sed -e '1 c port: 7890\nsocks-port: 7891\nallow-lan: true\nmode: global\nlog-lev
 rm -f /root/clashconfig/*
 
 docker restart dreamacro-clash1
-脚本已结束！！
+echo '脚本已结束！！'
 rm -- "$0"
